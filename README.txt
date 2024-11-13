@@ -1,1 +1,2 @@
-Sezione in cui scrivere programmi per dare istruzioni per nuove librerie, file, sezioni o altro...
+Progetto di Programmazione 2025 di Mattia Graziani, Davide Gamberini, Samuele Grillini
+SNAKE
