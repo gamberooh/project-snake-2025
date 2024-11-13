@@ -1,2 +1,1 @@
-Progetto programmazione 2025 di Mattia, Davide, Samuele
-SNAKE
+Sezione in cui scrivere programmi per dare istruzioni per nuove librerie, file, sezioni o altro...
