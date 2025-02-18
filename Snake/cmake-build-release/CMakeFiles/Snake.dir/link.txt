@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/Snake.dir/main.cpp.o CMakeFiles/Snake.dir/game.cpp.o CMakeFiles/Snake.dir/utility.cpp.o CMakeFiles/Snake.dir/snake.cpp.o CMakeFiles/Snake.dir/arena.cpp.o CMakeFiles/Snake.dir/food.cpp.o -o Snake  -lcurses /usr/lib/x86_64-linux-gnu/libform.so
