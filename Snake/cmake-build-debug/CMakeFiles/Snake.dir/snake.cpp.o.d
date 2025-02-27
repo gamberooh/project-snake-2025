@@ -1,7 +1,7 @@
 CMakeFiles/Snake.dir/snake.cpp.o: \
- /home/gr8llo/Documents/project-snake-2025/Snake/snake.cpp \
+ /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/snake.cpp \
  /usr/include/stdc-predef.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/snake.h \
+ /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/snake.h \
  /usr/include/c++/13/ctime \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -32,8 +32,8 @@ CMakeFiles/Snake.dir/snake.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/utility.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/arena.h \
+ /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/utility.h \
+ /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/arena.h \
  /usr/include/curses.h /usr/include/ncurses_dll.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \

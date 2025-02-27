@@ -1,7 +1,7 @@
 CMakeFiles/Snake.dir/game.cpp.o: \
- /home/gr8llo/Documents/project-snake-2025/Snake/game.cpp \
+ /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/game.cpp \
  /usr/include/stdc-predef.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/game.h \
+ /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/game.h \
  /usr/include/c++/13/ctime \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -53,7 +53,7 @@ CMakeFiles/Snake.dir/game.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
  /usr/include/unctrl.h /usr/include/curses.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/snake.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/utility.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/arena.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/food.h
+ /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/snake.h \
+ /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/utility.h \
+ /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/arena.h \
+ /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/food.h
