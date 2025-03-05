@@ -1,13 +1,13 @@
 #include <iostream>
 #include "levels.h"
 using namespace std;
-Levels::Levels() : head(NULL), nlevels(30), level_template({5,0.0,5,0,5,5,NULL,NULL}){
+Levels::Levels() : head(NULL), nlevels(30), level_template({1,5,0.0,5,0,5,5,NULL,NULL}){
 
 }
 void Levels::init(){
   head = NULL;
 }
-plevel Levels::push_back(plevel f, double time_limit, double time_passed, double speed, int current_score, double multiplier, int bonus_end_level){
+plevel Levels::push_back(plevel f, int level, double time_limit, double time_passed, double speed, int current_score, double multiplier, int bonus_end_level){
   plevel testa = f;
   //puntatori
   while (testa != NULL && testa -> next != NULL){
@@ -42,9 +42,20 @@ plevel Levels::create_levels(){
   int i = 0;
   double mult = 1;
   while (i < nlevels){
-    head = push_back(head, level_template.time_limit*mult, level_template.time_passed, level_template.speed, level_template.current_score, level_template.multiplier, level_template.bonus_end_level*mult);
+    head = push_back(head, i+1, level_template.time_limit*mult, level_template.time_passed, level_template.speed, level_template.current_score, level_template.multiplier, level_template.bonus_end_level*mult);
+    cout << i+1 << endl;
     mult += level_template.multiplier;
     i++;
   }
   return head;
+}
+void Levels::print_levels(){
+  plevel testa = head;
+  int i = 0;
+  while (testa != NULL){
+    cout << i<< endl;
+    i++;
+    cout << testa -> id_level << endl;
+  	testa = testa -> next;
+  }
 }

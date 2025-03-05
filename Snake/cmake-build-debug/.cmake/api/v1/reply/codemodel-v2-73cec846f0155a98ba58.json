@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/gamberooh/project-snake-2025/Snake/cmake-build-debug",
-		"source" : "/home/gamberooh/project-snake-2025/Snake"
+		"build" : "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug",
+		"source" : "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake"
 	},
 	"version" : 
 	{

@@ -6,6 +6,8 @@
 #endif //LEVELS_H
 
 struct single_level{
+  //numero del livello
+  int id_level;
   //tempo
   double time_limit;
   double time_passed;  // con il tempo passato e la durata totale si riesce a capire lo stato del livello, iniziato, nuovo, finito
@@ -26,9 +28,16 @@ class Levels{
     plevel head;
     int nlevels;
     void init();
-    plevel push_back(plevel nLev, double time_limit, double time_passed, double speed, int current_score, double multiplier, int bonus_end_level);
+    plevel push_back(plevel nLev, int level, double time_limit, double time_passed, double speed, int current_score, double multiplier, int bonus_end_level);
     plevel create_levels();
     single_level level_template;
-  public:
+  pubid_levellic:
     Levels();
+    void print_levels();
 };
+
+int main(){
+  Levels livelli = Levels();
+  livelli.print_levels();
+  return 0;
+}
