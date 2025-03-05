@@ -15,7 +15,12 @@ add_executable(Snake main.cpp
                 utility.cpp
                 snake.cpp
                 arena.cpp
-                food.cpp)
+                food.cpp
+        menu.cpp
+        menu.h
+        ranking.cpp
+        ranking.h
+)
 
 # Collega le librerie NCurses all'eseguibile
 target_link_libraries(Snake ${CURSES_LIBRARIES})

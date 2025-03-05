@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/322/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /home/gamberooh/Scaricati/clion-2024.3.3/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/322/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /home/gamberooh/Scaricati/clion-2024.3.3/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake"
+CMAKE_SOURCE_DIR = /home/gamberooh/project-snake-2025/Snake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug"
+CMAKE_BINARY_DIR = /home/gamberooh/project-snake-2025/Snake/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazio
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/snap/clion/322/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/gamberooh/Scaricati/clion-2024.3.3/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/snap/clion/322/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/gamberooh/Scaricati/clion-2024.3.3/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug/CMakeFiles" "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gamberooh/project-snake-2025/Snake/cmake-build-debug/CMakeFiles /home/gamberooh/project-snake-2025/Snake/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gamberooh/project-snake-2025/Snake/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -225,6 +225,54 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+menu.o: menu.cpp.o
+.PHONY : menu.o
+
+# target to build an object file
+menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/menu.cpp.o
+.PHONY : menu.cpp.o
+
+menu.i: menu.cpp.i
+.PHONY : menu.i
+
+# target to preprocess a source file
+menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/menu.cpp.i
+.PHONY : menu.cpp.i
+
+menu.s: menu.cpp.s
+.PHONY : menu.s
+
+# target to generate assembly for a file
+menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/menu.cpp.s
+.PHONY : menu.cpp.s
+
+ranking.o: ranking.cpp.o
+.PHONY : ranking.o
+
+# target to build an object file
+ranking.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/ranking.cpp.o
+.PHONY : ranking.cpp.o
+
+ranking.i: ranking.cpp.i
+.PHONY : ranking.i
+
+# target to preprocess a source file
+ranking.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/ranking.cpp.i
+.PHONY : ranking.cpp.i
+
+ranking.s: ranking.cpp.s
+.PHONY : ranking.s
+
+# target to generate assembly for a file
+ranking.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/ranking.cpp.s
+.PHONY : ranking.cpp.s
+
 snake.o: snake.cpp.o
 .PHONY : snake.o
 
@@ -294,6 +342,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... menu.o"
+	@echo "... menu.i"
+	@echo "... menu.s"
+	@echo "... ranking.o"
+	@echo "... ranking.i"
+	@echo "... ranking.s"
 	@echo "... snake.o"
 	@echo "... snake.i"
 	@echo "... snake.s"

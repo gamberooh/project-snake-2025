@@ -1,11 +1,46 @@
-//
-// Created by gambe on 27/11/2024.
-//
+#include <iostream>
+#include <fstream>
+#include <cstring>
+//#include "utility.h"
 
 #ifndef WRITELOG_H
 #define WRITELOG_H
 
 #endif //WRITELOG_H
 
-void writeLog(char player[], unsigned int level, unsigned int score, bool game_over);
-char * getLastLog();
+// struttura che poi verra sostituita da levels di mattia
+
+struct DoubleLinkedLevel {
+  DoubleLinkedLevel* before;
+  int id; //numero livello
+  int score;
+  bool completo; //esempio
+  DoubleLinkedLevel* next;
+};
+
+typedef DoubleLinkedLevel * plevel;
+
+class Log {
+  private:
+    char * nickname;
+    plevel levels;
+
+  public:
+    Log();
+    Log(char * nickname, plevel levels);
+
+    void setNickname(char * nickname) ;
+    char * getNickname();
+
+    void setLevels(plevel levels) ;
+    plevel getLevels () ;
+
+
+    long getTotalScore() ;
+
+    void writeLog(int slot_partita);
+     //getLastLog();
+};
+
+
+
