@@ -1,7 +1,7 @@
 CMakeFiles/Snake.dir/arena.cpp.o: \
- /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/arena.cpp \
+ /home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/arena.cpp \
  /usr/include/stdc-predef.h \
- /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/arena.h \
+ /home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/arena.h \
  /usr/include/curses.h /usr/include/ncurses_dll.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -36,4 +36,4 @@ CMakeFiles/Snake.dir/arena.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/unctrl.h /usr/include/curses.h \
- /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/utility.h
+ /home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/utility.h

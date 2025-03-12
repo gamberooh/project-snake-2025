@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/CMakeLists.txt"
+  "/home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/CMakeLists.txt"
   "CMakeFiles/3.30.5/CMakeCCompiler.cmake"
   "CMakeFiles/3.30.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.30.5/CMakeSystem.cmake"

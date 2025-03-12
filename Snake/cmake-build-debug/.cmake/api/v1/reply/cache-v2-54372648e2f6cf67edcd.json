@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug"
+			"value" : "/home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake"
+			"value" : "/home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1263,7 +1263,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug"
+			"value" : "/home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/cmake-build-debug"
 		},
 		{
 			"name" : "Snake_IS_TOP_LEVEL",
@@ -1287,7 +1287,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake"
+			"value" : "/home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

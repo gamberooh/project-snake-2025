@@ -1,3 +1,3 @@
-/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug/CMakeFiles/Snake.dir
-/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/mattia/Scrivania/Mattia/UNIBO Info/I Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/cmake-build-debug/CMakeFiles/Snake.dir
+/home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/cmake-build-debug/CMakeFiles/rebuild_cache.dir

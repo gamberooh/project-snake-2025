@@ -1,7 +1,7 @@
 CMakeFiles/Snake.dir/utility.cpp.o: \
- /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/utility.cpp \
+ /home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/utility.cpp \
  /usr/include/stdc-predef.h \
- /home/mattia/Scrivania/Mattia/UNIBO\ Info/I\ Anno/Programmazione/Progetto/SnakeGit/project-snake-2025/Snake/utility.h \
+ /home/mattia/Scrivania/Mattia/Git/project-snake-2025/Snake/utility.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstddef>
+using namespace std;
 
 #ifndef LEVELS_H
 #define LEVELS_H
@@ -28,16 +30,11 @@ class Levels{
     plevel head;
     int nlevels;
     void init();
-    plevel push_back(plevel nLev, int level, double time_limit, double time_passed, double speed, int current_score, double multiplier, int bonus_end_level);
-    plevel create_levels();
+    plevel push_back(plevel nLev, int id_level, double time_limit, double time_passed, double speed, int current_score, double multiplier, int bonus_end_level);
     single_level level_template;
-  pubid_levellic:
+  public:
     Levels();
-    void print_levels();
+    void create_levels();
+    void print_id_levels();
 };
 
-int main(){
-  Levels livelli = Levels();
-  livelli.print_levels();
-  return 0;
-}
