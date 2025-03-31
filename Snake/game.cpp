@@ -71,6 +71,7 @@ void Game::processInput() {
             endwin();
             isRunning = false;
             break;
+        case
         default:
             // Handle other key presses
             break;

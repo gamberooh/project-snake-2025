@@ -201,6 +201,30 @@ game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/game.cpp.s
 .PHONY : game.cpp.s
 
+levels.o: levels.cpp.o
+.PHONY : levels.o
+
+# target to build an object file
+levels.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/levels.cpp.o
+.PHONY : levels.cpp.o
+
+levels.i: levels.cpp.i
+.PHONY : levels.i
+
+# target to preprocess a source file
+levels.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/levels.cpp.i
+.PHONY : levels.cpp.i
+
+levels.s: levels.cpp.s
+.PHONY : levels.s
+
+# target to generate assembly for a file
+levels.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/levels.cpp.s
+.PHONY : levels.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -224,6 +248,54 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+menu.o: menu.cpp.o
+.PHONY : menu.o
+
+# target to build an object file
+menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/menu.cpp.o
+.PHONY : menu.cpp.o
+
+menu.i: menu.cpp.i
+.PHONY : menu.i
+
+# target to preprocess a source file
+menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/menu.cpp.i
+.PHONY : menu.cpp.i
+
+menu.s: menu.cpp.s
+.PHONY : menu.s
+
+# target to generate assembly for a file
+menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/menu.cpp.s
+.PHONY : menu.cpp.s
+
+ranking.o: ranking.cpp.o
+.PHONY : ranking.o
+
+# target to build an object file
+ranking.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/ranking.cpp.o
+.PHONY : ranking.cpp.o
+
+ranking.i: ranking.cpp.i
+.PHONY : ranking.i
+
+# target to preprocess a source file
+ranking.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/ranking.cpp.i
+.PHONY : ranking.cpp.i
+
+ranking.s: ranking.cpp.s
+.PHONY : ranking.s
+
+# target to generate assembly for a file
+ranking.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/ranking.cpp.s
+.PHONY : ranking.cpp.s
 
 snake.o: snake.cpp.o
 .PHONY : snake.o
@@ -291,9 +363,18 @@ help:
 	@echo "... game.o"
 	@echo "... game.i"
 	@echo "... game.s"
+	@echo "... levels.o"
+	@echo "... levels.i"
+	@echo "... levels.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... menu.o"
+	@echo "... menu.i"
+	@echo "... menu.s"
+	@echo "... ranking.o"
+	@echo "... ranking.i"
+	@echo "... ranking.s"
 	@echo "... snake.o"
 	@echo "... snake.i"
 	@echo "... snake.s"

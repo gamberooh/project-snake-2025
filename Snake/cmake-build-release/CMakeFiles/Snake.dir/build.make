@@ -153,6 +153,48 @@ CMakeFiles/Snake.dir/food.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/food.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gr8llo/Documents/project-snake-2025/Snake/food.cpp -o CMakeFiles/Snake.dir/food.cpp.s
 
+CMakeFiles/Snake.dir/menu.cpp.o: CMakeFiles/Snake.dir/flags.make
+CMakeFiles/Snake.dir/menu.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/menu.cpp
+CMakeFiles/Snake.dir/menu.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Snake.dir/menu.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/menu.cpp.o -MF CMakeFiles/Snake.dir/menu.cpp.o.d -o CMakeFiles/Snake.dir/menu.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/menu.cpp
+
+CMakeFiles/Snake.dir/menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Snake.dir/menu.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gr8llo/Documents/project-snake-2025/Snake/menu.cpp > CMakeFiles/Snake.dir/menu.cpp.i
+
+CMakeFiles/Snake.dir/menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/menu.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gr8llo/Documents/project-snake-2025/Snake/menu.cpp -o CMakeFiles/Snake.dir/menu.cpp.s
+
+CMakeFiles/Snake.dir/ranking.cpp.o: CMakeFiles/Snake.dir/flags.make
+CMakeFiles/Snake.dir/ranking.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/ranking.cpp
+CMakeFiles/Snake.dir/ranking.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Snake.dir/ranking.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/ranking.cpp.o -MF CMakeFiles/Snake.dir/ranking.cpp.o.d -o CMakeFiles/Snake.dir/ranking.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/ranking.cpp
+
+CMakeFiles/Snake.dir/ranking.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Snake.dir/ranking.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gr8llo/Documents/project-snake-2025/Snake/ranking.cpp > CMakeFiles/Snake.dir/ranking.cpp.i
+
+CMakeFiles/Snake.dir/ranking.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/ranking.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gr8llo/Documents/project-snake-2025/Snake/ranking.cpp -o CMakeFiles/Snake.dir/ranking.cpp.s
+
+CMakeFiles/Snake.dir/levels.cpp.o: CMakeFiles/Snake.dir/flags.make
+CMakeFiles/Snake.dir/levels.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/levels.cpp
+CMakeFiles/Snake.dir/levels.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Snake.dir/levels.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/levels.cpp.o -MF CMakeFiles/Snake.dir/levels.cpp.o.d -o CMakeFiles/Snake.dir/levels.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/levels.cpp
+
+CMakeFiles/Snake.dir/levels.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Snake.dir/levels.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gr8llo/Documents/project-snake-2025/Snake/levels.cpp > CMakeFiles/Snake.dir/levels.cpp.i
+
+CMakeFiles/Snake.dir/levels.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/levels.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gr8llo/Documents/project-snake-2025/Snake/levels.cpp -o CMakeFiles/Snake.dir/levels.cpp.s
+
 # Object files for target Snake
 Snake_OBJECTS = \
 "CMakeFiles/Snake.dir/main.cpp.o" \
@@ -160,7 +202,10 @@ Snake_OBJECTS = \
 "CMakeFiles/Snake.dir/utility.cpp.o" \
 "CMakeFiles/Snake.dir/snake.cpp.o" \
 "CMakeFiles/Snake.dir/arena.cpp.o" \
-"CMakeFiles/Snake.dir/food.cpp.o"
+"CMakeFiles/Snake.dir/food.cpp.o" \
+"CMakeFiles/Snake.dir/menu.cpp.o" \
+"CMakeFiles/Snake.dir/ranking.cpp.o" \
+"CMakeFiles/Snake.dir/levels.cpp.o"
 
 # External object files for target Snake
 Snake_EXTERNAL_OBJECTS =
@@ -171,11 +216,14 @@ Snake: CMakeFiles/Snake.dir/utility.cpp.o
 Snake: CMakeFiles/Snake.dir/snake.cpp.o
 Snake: CMakeFiles/Snake.dir/arena.cpp.o
 Snake: CMakeFiles/Snake.dir/food.cpp.o
+Snake: CMakeFiles/Snake.dir/menu.cpp.o
+Snake: CMakeFiles/Snake.dir/ranking.cpp.o
+Snake: CMakeFiles/Snake.dir/levels.cpp.o
 Snake: CMakeFiles/Snake.dir/build.make
 Snake: /usr/lib/x86_64-linux-gnu/libcurses.so
 Snake: /usr/lib/x86_64-linux-gnu/libform.so
 Snake: CMakeFiles/Snake.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Snake"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Snake"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Snake.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -19,7 +19,6 @@ bool Food::update(const Snake &snake, Arena &arena) {
     if(snake.body.head->pos.x == spawnPos.x && snake.body.head->pos.y == spawnPos.y) {
         setPosition(snake, arena);
         return true;
-
     }
     return false;
 }

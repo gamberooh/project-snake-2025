@@ -17,7 +17,6 @@ class Snake{
       int characterPerSecond;
       clock_t lastUpdateTime;
       utl::Position direction;
-
       void moveSnake(Arena &arena);
 };
 

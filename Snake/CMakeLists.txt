@@ -16,10 +16,9 @@ add_executable(Snake main.cpp
                 snake.cpp
                 arena.cpp
                 food.cpp
-        menu.cpp
-        menu.h
-        ranking.cpp
-        ranking.h
+                menu.cpp
+                ranking.cpp
+                levels.cpp
 )
 
 # Collega le librerie NCurses all'eseguibile

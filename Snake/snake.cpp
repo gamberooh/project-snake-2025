@@ -15,6 +15,7 @@ Snake::Snake(const int length, Arena &arena) : characterPerSecond(7), lastUpdate
     }
 }
 
+
 void Snake::changeDirection(int x, int y) {
     // verso destra = 1 0 => verso sinistra = -1 0 quindi se la somma è zero non posso andarci
     // all'inizio direction = 0 quindi fermo fin che non si preme un tasto
