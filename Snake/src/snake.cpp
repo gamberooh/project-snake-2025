@@ -1,4 +1,4 @@
-#include "snake.h"
+#include "../include/snake.h"
 #include <cstdlib>
 #include <ctime>
 
@@ -43,16 +43,16 @@ void Snake::moveSnake(Arena &arena) {
     utl::Position newpos;
     newpos.x = direction.x;
     newpos.y = direction.y;
-    newpos.add(body.head->pos);
+    newpos.add(body.head->value);
     newpos = boundCheckUpdate(newpos, arena.width, arena.height);
 
     //check self collision
     if(body.isMember(newpos)) return;
 
-    arena.arena[body.tail->pos.y][body.tail->pos.x] = false;
+    arena.arena[body.tail->value.y][body.tail->value.x] = false;
     body.moveLastFront();
-    body.head->pos = newpos;
-    arena.arena[body.head->pos.y][body.head->pos.x] = true;
+    body.head->value = newpos;
+    arena.arena[body.head->value.y][body.head->value.x] = true;
 }
 
 

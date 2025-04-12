@@ -2,12 +2,9 @@
 #define GAME_H
 
 #include <ctime>
+#include "singleLevel.h"
 #include <ncurses.h>
-
-#include "snake.h"
-#include "arena.h"
-#include "food.h"
-#include "levels.h"
+#include "utility.h"
 
 class Game {
     public:
@@ -16,13 +13,10 @@ class Game {
 
     private:
         bool isRunning;
-        Arena arena;  //non invertire queste due se no da errore perchè arena non è ancora definita e snake ci accede;
-        Snake snake;
-        Food food;
-        Levels levels;
-
+        bool openMenu;
         int fps;
-        int score;
+        SingleLevel currentLevel;
+
 
         void processInput();
         void update(clock_t updateTime);

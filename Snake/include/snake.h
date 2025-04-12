@@ -8,7 +8,7 @@
 class Snake{
   public:
       Snake(int length, Arena &arena);
-      utl::DoubleLinkedList body;
+      utl::DoubleLinkedListPos body;
 
       void changeDirection(int x, int y);
       void update(clock_t updateTime, Arena &arena);

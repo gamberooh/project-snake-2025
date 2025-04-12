@@ -5,26 +5,34 @@
 namespace utl {
     struct Position {
         int x, y;
-        void add(Position a);
+        Position(int x, int y);
+        Position();
+        void add(Position add);
+        bool operator==(Position other) const;
     };
 
-    struct posNode{
-        Position pos;
-        posNode *next;
-        posNode *prev;
+    template <typename T>
+    struct Node{
+        T value;
+        Node *next;
+        Node *prev;
     };
 
-    typedef posNode* p_posNode;
-
+    template <typename T>
     struct DoubleLinkedList{
-        p_posNode head;
-        p_posNode tail;
-
+        Node<T> *head;
+        Node<T> *tail;
         DoubleLinkedList();
-        p_posNode create_node(Position pos);
-        void insert(int x, int y);
+        protected:
+            Node<T>* createNode(T node);
+    };
+
+    struct DoubleLinkedListPos : DoubleLinkedList<Position> {
         void moveLastFront();
+        void insert(int x, int y);
         bool isMember(Position val) const;
     };
+
+
 }
 #endif //UTILITY_H

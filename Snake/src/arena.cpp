@@ -1,4 +1,4 @@
-#include "arena.h"
+#include "../include/arena.h"
 
 Arena::Arena(): height(30), width(30){
     //initialize arena to false

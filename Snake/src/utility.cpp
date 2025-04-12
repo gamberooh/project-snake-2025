@@ -1,42 +1,62 @@
-#include "utility.h"
+#include "../include/utility.h"
 #include <iostream>
 
-
-void utl::Position::add(const Position a) {
-    x += a.x;
-    y += a.y;
+//Position
+void utl::Position::add(const Position add) {
+    x += add.x;
+    y += add.y;
 }
 
-utl::DoubleLinkedList::DoubleLinkedList() : head(NULL), tail(NULL) {}
+utl::Position::Position(const int x, const int y) {
+    this->x = x;
+    this->y = y;
+}
 
-utl::p_posNode utl::DoubleLinkedList::create_node(Position pos) {
-    p_posNode newNode = new posNode;
-    newNode->pos = pos;
+utl::Position::Position() {
+    this->x = 0;
+    this->y = 0;
+}
+
+
+bool utl::Position::operator==(const Position other) const {
+    if(other.x == this->x && other.y == this->y) return true;
+    else return false;
+}
+
+//General DLL
+template <typename T>
+utl::DoubleLinkedList<T>::DoubleLinkedList() : head(NULL), tail(NULL) {}
+
+template<typename T>
+utl::Node<T>* utl::DoubleLinkedList<T>::createNode(T node) {
+    auto newNode = new Node<T>;
+    newNode->value = node;
     newNode->next = NULL;
     newNode->prev = NULL;
     return newNode;
 }
 
-void utl::DoubleLinkedList::insert(const int x, const int y) {
-    utl::Position pos;
-    pos.x = x;
-    pos.y = y;
-    p_posNode newnode = create_node(pos);
+//Position DLL
+typedef utl::Node<utl::Position>* p_posNode;
+
+void utl::DoubleLinkedListPos::insert(const int x, const int y) {
+    Position pos(x, y);  //pos{} initialize all parameters to default value
+    p_posNode newNode = createNode(pos);
 
     if(head == NULL){
-        tail = newnode;
+        tail = newNode;
         head = tail;
-        newnode->next = NULL;
-        newnode->prev = NULL;
+        newNode->next = NULL;
+        newNode->prev = NULL;
     }
     else {
-        newnode->next = head;
-        head->prev = newnode;
-        head = newnode;
+        newNode->next = head;
+        head->prev = newNode;
+        head = newNode;
     }
 }
 
-void utl::DoubleLinkedList::moveLastFront() {
+void utl::DoubleLinkedListPos::moveLastFront() {
     //nessuno o un solo elemento
     if(head == NULL || head == tail) return;
 
@@ -51,10 +71,12 @@ void utl::DoubleLinkedList::moveLastFront() {
     tail = tmp;
 }
 
-bool utl::DoubleLinkedList::isMember(Position const val) const {
+template class utl::DoubleLinkedList<utl::Position>;
+
+bool utl::DoubleLinkedListPos::isMember(Position val) const {
     p_posNode tmp = head;
     while(tmp != NULL) {
-        if(tmp->pos.x == val.x && tmp->pos.y == val.y) return true;
+        if(tmp->value == val) return true;
         tmp = tmp->next;
     }
     return false;

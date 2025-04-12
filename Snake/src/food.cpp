@@ -1,9 +1,9 @@
-#include "food.h"
+#include "../include/food.h"
 #include <cstdlib>
 #include <ctime>
 
 
-Food::Food() : scoreValue(10) {}
+Food::Food() : scoreValue(10), spawnPos(0, 0) {}
 
 void Food::setPosition(const Snake &snake, Arena &arena) {
 
@@ -16,7 +16,7 @@ void Food::setPosition(const Snake &snake, Arena &arena) {
 }
 
 bool Food::update(const Snake &snake, Arena &arena) {
-    if(snake.body.head->pos.x == spawnPos.x && snake.body.head->pos.y == spawnPos.y) {
+    if(snake.body.head->value == spawnPos) {
         setPosition(snake, arena);
         return true;
     }

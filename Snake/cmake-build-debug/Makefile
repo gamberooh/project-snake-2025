@@ -129,102 +129,6 @@ Snake/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/build
 .PHONY : Snake/fast
 
-arena.o: arena.cpp.o
-.PHONY : arena.o
-
-# target to build an object file
-arena.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/arena.cpp.o
-.PHONY : arena.cpp.o
-
-arena.i: arena.cpp.i
-.PHONY : arena.i
-
-# target to preprocess a source file
-arena.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/arena.cpp.i
-.PHONY : arena.cpp.i
-
-arena.s: arena.cpp.s
-.PHONY : arena.s
-
-# target to generate assembly for a file
-arena.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/arena.cpp.s
-.PHONY : arena.cpp.s
-
-food.o: food.cpp.o
-.PHONY : food.o
-
-# target to build an object file
-food.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/food.cpp.o
-.PHONY : food.cpp.o
-
-food.i: food.cpp.i
-.PHONY : food.i
-
-# target to preprocess a source file
-food.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/food.cpp.i
-.PHONY : food.cpp.i
-
-food.s: food.cpp.s
-.PHONY : food.s
-
-# target to generate assembly for a file
-food.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/food.cpp.s
-.PHONY : food.cpp.s
-
-game.o: game.cpp.o
-.PHONY : game.o
-
-# target to build an object file
-game.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/game.cpp.o
-.PHONY : game.cpp.o
-
-game.i: game.cpp.i
-.PHONY : game.i
-
-# target to preprocess a source file
-game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/game.cpp.i
-.PHONY : game.cpp.i
-
-game.s: game.cpp.s
-.PHONY : game.s
-
-# target to generate assembly for a file
-game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/game.cpp.s
-.PHONY : game.cpp.s
-
-levels.o: levels.cpp.o
-.PHONY : levels.o
-
-# target to build an object file
-levels.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/levels.cpp.o
-.PHONY : levels.cpp.o
-
-levels.i: levels.cpp.i
-.PHONY : levels.i
-
-# target to preprocess a source file
-levels.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/levels.cpp.i
-.PHONY : levels.cpp.i
-
-levels.s: levels.cpp.s
-.PHONY : levels.s
-
-# target to generate assembly for a file
-levels.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/levels.cpp.s
-.PHONY : levels.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -249,101 +153,221 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-menu.o: menu.cpp.o
-.PHONY : menu.o
+src/arena.o: src/arena.cpp.o
+.PHONY : src/arena.o
 
 # target to build an object file
-menu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/menu.cpp.o
-.PHONY : menu.cpp.o
+src/arena.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/arena.cpp.o
+.PHONY : src/arena.cpp.o
 
-menu.i: menu.cpp.i
-.PHONY : menu.i
+src/arena.i: src/arena.cpp.i
+.PHONY : src/arena.i
 
 # target to preprocess a source file
-menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/menu.cpp.i
-.PHONY : menu.cpp.i
+src/arena.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/arena.cpp.i
+.PHONY : src/arena.cpp.i
 
-menu.s: menu.cpp.s
-.PHONY : menu.s
+src/arena.s: src/arena.cpp.s
+.PHONY : src/arena.s
 
 # target to generate assembly for a file
-menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/menu.cpp.s
-.PHONY : menu.cpp.s
+src/arena.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/arena.cpp.s
+.PHONY : src/arena.cpp.s
 
-ranking.o: ranking.cpp.o
-.PHONY : ranking.o
+src/food.o: src/food.cpp.o
+.PHONY : src/food.o
 
 # target to build an object file
-ranking.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/ranking.cpp.o
-.PHONY : ranking.cpp.o
+src/food.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/food.cpp.o
+.PHONY : src/food.cpp.o
 
-ranking.i: ranking.cpp.i
-.PHONY : ranking.i
+src/food.i: src/food.cpp.i
+.PHONY : src/food.i
 
 # target to preprocess a source file
-ranking.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/ranking.cpp.i
-.PHONY : ranking.cpp.i
+src/food.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/food.cpp.i
+.PHONY : src/food.cpp.i
 
-ranking.s: ranking.cpp.s
-.PHONY : ranking.s
+src/food.s: src/food.cpp.s
+.PHONY : src/food.s
 
 # target to generate assembly for a file
-ranking.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/ranking.cpp.s
-.PHONY : ranking.cpp.s
+src/food.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/food.cpp.s
+.PHONY : src/food.cpp.s
 
-snake.o: snake.cpp.o
-.PHONY : snake.o
+src/game.o: src/game.cpp.o
+.PHONY : src/game.o
 
 # target to build an object file
-snake.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/snake.cpp.o
-.PHONY : snake.cpp.o
+src/game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/game.cpp.o
+.PHONY : src/game.cpp.o
 
-snake.i: snake.cpp.i
-.PHONY : snake.i
+src/game.i: src/game.cpp.i
+.PHONY : src/game.i
 
 # target to preprocess a source file
-snake.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/snake.cpp.i
-.PHONY : snake.cpp.i
+src/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/game.cpp.i
+.PHONY : src/game.cpp.i
 
-snake.s: snake.cpp.s
-.PHONY : snake.s
+src/game.s: src/game.cpp.s
+.PHONY : src/game.s
 
 # target to generate assembly for a file
-snake.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/snake.cpp.s
-.PHONY : snake.cpp.s
+src/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/game.cpp.s
+.PHONY : src/game.cpp.s
 
-utility.o: utility.cpp.o
-.PHONY : utility.o
+src/levels.o: src/levels.cpp.o
+.PHONY : src/levels.o
 
 # target to build an object file
-utility.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/utility.cpp.o
-.PHONY : utility.cpp.o
+src/levels.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/levels.cpp.o
+.PHONY : src/levels.cpp.o
 
-utility.i: utility.cpp.i
-.PHONY : utility.i
+src/levels.i: src/levels.cpp.i
+.PHONY : src/levels.i
 
 # target to preprocess a source file
-utility.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/utility.cpp.i
-.PHONY : utility.cpp.i
+src/levels.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/levels.cpp.i
+.PHONY : src/levels.cpp.i
 
-utility.s: utility.cpp.s
-.PHONY : utility.s
+src/levels.s: src/levels.cpp.s
+.PHONY : src/levels.s
 
 # target to generate assembly for a file
-utility.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/utility.cpp.s
-.PHONY : utility.cpp.s
+src/levels.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/levels.cpp.s
+.PHONY : src/levels.cpp.s
+
+src/menu.o: src/menu.cpp.o
+.PHONY : src/menu.o
+
+# target to build an object file
+src/menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/menu.cpp.o
+.PHONY : src/menu.cpp.o
+
+src/menu.i: src/menu.cpp.i
+.PHONY : src/menu.i
+
+# target to preprocess a source file
+src/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/menu.cpp.i
+.PHONY : src/menu.cpp.i
+
+src/menu.s: src/menu.cpp.s
+.PHONY : src/menu.s
+
+# target to generate assembly for a file
+src/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/menu.cpp.s
+.PHONY : src/menu.cpp.s
+
+src/ranking.o: src/ranking.cpp.o
+.PHONY : src/ranking.o
+
+# target to build an object file
+src/ranking.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/ranking.cpp.o
+.PHONY : src/ranking.cpp.o
+
+src/ranking.i: src/ranking.cpp.i
+.PHONY : src/ranking.i
+
+# target to preprocess a source file
+src/ranking.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/ranking.cpp.i
+.PHONY : src/ranking.cpp.i
+
+src/ranking.s: src/ranking.cpp.s
+.PHONY : src/ranking.s
+
+# target to generate assembly for a file
+src/ranking.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/ranking.cpp.s
+.PHONY : src/ranking.cpp.s
+
+src/singleLevel.o: src/singleLevel.cpp.o
+.PHONY : src/singleLevel.o
+
+# target to build an object file
+src/singleLevel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/singleLevel.cpp.o
+.PHONY : src/singleLevel.cpp.o
+
+src/singleLevel.i: src/singleLevel.cpp.i
+.PHONY : src/singleLevel.i
+
+# target to preprocess a source file
+src/singleLevel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/singleLevel.cpp.i
+.PHONY : src/singleLevel.cpp.i
+
+src/singleLevel.s: src/singleLevel.cpp.s
+.PHONY : src/singleLevel.s
+
+# target to generate assembly for a file
+src/singleLevel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/singleLevel.cpp.s
+.PHONY : src/singleLevel.cpp.s
+
+src/snake.o: src/snake.cpp.o
+.PHONY : src/snake.o
+
+# target to build an object file
+src/snake.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/snake.cpp.o
+.PHONY : src/snake.cpp.o
+
+src/snake.i: src/snake.cpp.i
+.PHONY : src/snake.i
+
+# target to preprocess a source file
+src/snake.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/snake.cpp.i
+.PHONY : src/snake.cpp.i
+
+src/snake.s: src/snake.cpp.s
+.PHONY : src/snake.s
+
+# target to generate assembly for a file
+src/snake.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/snake.cpp.s
+.PHONY : src/snake.cpp.s
+
+src/utility.o: src/utility.cpp.o
+.PHONY : src/utility.o
+
+# target to build an object file
+src/utility.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/utility.cpp.o
+.PHONY : src/utility.cpp.o
+
+src/utility.i: src/utility.cpp.i
+.PHONY : src/utility.i
+
+# target to preprocess a source file
+src/utility.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/utility.cpp.i
+.PHONY : src/utility.cpp.i
+
+src/utility.s: src/utility.cpp.s
+.PHONY : src/utility.s
+
+# target to generate assembly for a file
+src/utility.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/utility.cpp.s
+.PHONY : src/utility.cpp.s
 
 # Help Target
 help:
@@ -354,33 +378,36 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Snake"
-	@echo "... arena.o"
-	@echo "... arena.i"
-	@echo "... arena.s"
-	@echo "... food.o"
-	@echo "... food.i"
-	@echo "... food.s"
-	@echo "... game.o"
-	@echo "... game.i"
-	@echo "... game.s"
-	@echo "... levels.o"
-	@echo "... levels.i"
-	@echo "... levels.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... menu.o"
-	@echo "... menu.i"
-	@echo "... menu.s"
-	@echo "... ranking.o"
-	@echo "... ranking.i"
-	@echo "... ranking.s"
-	@echo "... snake.o"
-	@echo "... snake.i"
-	@echo "... snake.s"
-	@echo "... utility.o"
-	@echo "... utility.i"
-	@echo "... utility.s"
+	@echo "... src/arena.o"
+	@echo "... src/arena.i"
+	@echo "... src/arena.s"
+	@echo "... src/food.o"
+	@echo "... src/food.i"
+	@echo "... src/food.s"
+	@echo "... src/game.o"
+	@echo "... src/game.i"
+	@echo "... src/game.s"
+	@echo "... src/levels.o"
+	@echo "... src/levels.i"
+	@echo "... src/levels.s"
+	@echo "... src/menu.o"
+	@echo "... src/menu.i"
+	@echo "... src/menu.s"
+	@echo "... src/ranking.o"
+	@echo "... src/ranking.i"
+	@echo "... src/ranking.s"
+	@echo "... src/singleLevel.o"
+	@echo "... src/singleLevel.i"
+	@echo "... src/singleLevel.s"
+	@echo "... src/snake.o"
+	@echo "... src/snake.i"
+	@echo "... src/snake.s"
+	@echo "... src/utility.o"
+	@echo "... src/utility.i"
+	@echo "... src/utility.s"
 .PHONY : help
 
 

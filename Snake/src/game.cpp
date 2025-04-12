@@ -1,6 +1,7 @@
-#include "game.h"
+#include "../include/game.h"
+#include <cstring>
 
-Game::Game() : isRunning(true), snake(5, arena), fps(60), score(0){
+Game::Game() : isRunning(true), fps(60), openMenu(false){
     {
         initscr(); // Inizializza ncurses
         cbreak(); // Disabilita il buffering dell'input
@@ -21,9 +22,6 @@ Game::Game() : isRunning(true), snake(5, arena), fps(60), score(0){
         }
         refresh(); // Serve
     } //initialize ncurse
-    //snake initialized in the constructor
-    arena.setWindow();
-    food.setPosition(snake, arena);
 }
 
 clock_t getElapsedTimeMS(clock_t &start){
@@ -51,38 +49,69 @@ void Game::run(){
         }
         render();
     }
+
+    endwin(); //per sicurezza
 }
 
 void Game::processInput() {
-    switch (getch()) {
-        case KEY_UP: case 'w':
-            snake.changeDirection(0, -1);
+    if(!openMenu) {
+        switch (getch()) {
+            case KEY_UP: case 'w':
+                currentLevel.snake.changeDirection(0, -1);
             break;
-        case KEY_DOWN: case 's':
-            snake.changeDirection(0, 1);
+            case KEY_DOWN: case 's':
+                currentLevel.snake.changeDirection(0, 1);
             break;
-        case KEY_LEFT: case 'a':
-            snake.changeDirection(-1, 0);
+            case KEY_LEFT: case 'a':
+                currentLevel.snake.changeDirection(-1, 0);
             break;
-        case KEY_RIGHT: case 'd':
-            snake.changeDirection(1, 0);
+            case KEY_RIGHT: case 'd':
+                currentLevel.snake.changeDirection(1, 0);
             break;
-        case 'q':
-            endwin();
-            isRunning = false;
-            break;
-        case
-        default:
-            // Handle other key presses
-            break;
+            case 'q':
+                isRunning = false;
+                endwin();
+                break;
+            case 'm':
+                openMenu = true;
+                break;
+            default:
+                // Handle other key presses
+                break;
+        }
+    }
+    else {
+        switch (getch()) {
+            case 'm':
+                clear();
+                refresh();
+                openMenu = false;
+                break;
+            default:
+                break;
+        }
     }
 }
 
 void Game::update(const clock_t updateTime) {
-    snake.update(updateTime, arena);
-    if(food.update(snake, arena)) score += food.scoreValue;
+
+
+    if (!openMenu) {
+        currentLevel.snake.update(updateTime, currentLevel.arena);
+        if(currentLevel.food.update(currentLevel.snake,currentLevel.arena)) currentLevel.score += currentLevel.food.scoreValue;
+    }
+    else {
+        const char str[] = "Menu aperto, da implementare";
+        int rows, cols;
+        getmaxyx(stdscr, rows, cols);
+        cols = cols - (int)strlen(str);
+        mvprintw(rows/2, cols/2, "%s", str);
+    }
+
 }
 
 void Game::render() const{
-    arena.render(snake.body.head->pos, food.spawnPos, score);
+    if(!openMenu) {
+        currentLevel.arena.render(currentLevel.snake.body.head->value, currentLevel.food.spawnPos, currentLevel.score);
+    }
 }
