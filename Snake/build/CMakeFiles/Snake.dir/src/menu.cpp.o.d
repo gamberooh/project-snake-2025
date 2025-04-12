@@ -1,8 +1,7 @@
-CMakeFiles/Snake.dir/arena.cpp.o: \
- /home/gr8llo/Documents/project-snake-2025/Snake/arena.cpp \
- /usr/include/stdc-predef.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/arena.h \
- /usr/include/curses.h /usr/include/ncurses_dll.h \
+CMakeFiles/Snake.dir/src/menu.cpp.o: \
+ /home/gr8llo/Documents/project-snake-2025/Snake/src/menu.cpp \
+ /usr/include/stdc-predef.h /usr/include/menu.h /usr/include/curses.h \
+ /usr/include/ncurses_dll.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -35,5 +34,4 @@ CMakeFiles/Snake.dir/arena.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/unctrl.h /usr/include/curses.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/utility.h
+ /usr/include/unctrl.h /usr/include/eti.h

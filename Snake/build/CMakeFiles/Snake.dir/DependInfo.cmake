@@ -8,12 +8,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/gr8llo/Documents/project-snake-2025/Snake/arena.cpp" "CMakeFiles/Snake.dir/arena.cpp.o" "gcc" "CMakeFiles/Snake.dir/arena.cpp.o.d"
-  "/home/gr8llo/Documents/project-snake-2025/Snake/food.cpp" "CMakeFiles/Snake.dir/food.cpp.o" "gcc" "CMakeFiles/Snake.dir/food.cpp.o.d"
-  "/home/gr8llo/Documents/project-snake-2025/Snake/game.cpp" "CMakeFiles/Snake.dir/game.cpp.o" "gcc" "CMakeFiles/Snake.dir/game.cpp.o.d"
   "/home/gr8llo/Documents/project-snake-2025/Snake/main.cpp" "CMakeFiles/Snake.dir/main.cpp.o" "gcc" "CMakeFiles/Snake.dir/main.cpp.o.d"
-  "/home/gr8llo/Documents/project-snake-2025/Snake/snake.cpp" "CMakeFiles/Snake.dir/snake.cpp.o" "gcc" "CMakeFiles/Snake.dir/snake.cpp.o.d"
-  "/home/gr8llo/Documents/project-snake-2025/Snake/utility.cpp" "CMakeFiles/Snake.dir/utility.cpp.o" "gcc" "CMakeFiles/Snake.dir/utility.cpp.o.d"
+  "/home/gr8llo/Documents/project-snake-2025/Snake/src/arena.cpp" "CMakeFiles/Snake.dir/src/arena.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/arena.cpp.o.d"
+  "/home/gr8llo/Documents/project-snake-2025/Snake/src/food.cpp" "CMakeFiles/Snake.dir/src/food.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/food.cpp.o.d"
+  "/home/gr8llo/Documents/project-snake-2025/Snake/src/game.cpp" "CMakeFiles/Snake.dir/src/game.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/game.cpp.o.d"
+  "/home/gr8llo/Documents/project-snake-2025/Snake/src/levels.cpp" "CMakeFiles/Snake.dir/src/levels.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/levels.cpp.o.d"
+  "/home/gr8llo/Documents/project-snake-2025/Snake/src/menu.cpp" "CMakeFiles/Snake.dir/src/menu.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/menu.cpp.o.d"
+  "/home/gr8llo/Documents/project-snake-2025/Snake/src/ranking.cpp" "CMakeFiles/Snake.dir/src/ranking.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/ranking.cpp.o.d"
+  "/home/gr8llo/Documents/project-snake-2025/Snake/src/singleLevel.cpp" "CMakeFiles/Snake.dir/src/singleLevel.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/singleLevel.cpp.o.d"
+  "/home/gr8llo/Documents/project-snake-2025/Snake/src/snake.cpp" "CMakeFiles/Snake.dir/src/snake.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/snake.cpp.o.d"
+  "/home/gr8llo/Documents/project-snake-2025/Snake/src/utility.cpp" "CMakeFiles/Snake.dir/src/utility.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/utility.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

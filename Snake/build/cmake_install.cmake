@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gr8llo/Documents/project-snake-2025/Snake/Build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/gr8llo/Documents/project-snake-2025/Snake/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
