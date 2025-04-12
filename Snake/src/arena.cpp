@@ -59,7 +59,6 @@ void Arena::render(const utl::Position &snakeHead, const utl::Position &food, co
     }//print score
     display(snakeHead, food);
     wrefresh(arenaWin);
-
 }
 
 
