@@ -1,4 +1,8 @@
+### IntelliJ IDEA ###
 .idea
-.gitignore
+*.iws
+*.iml
+*.ipr
+
 cmake-build-debug
 cmake-build-release
