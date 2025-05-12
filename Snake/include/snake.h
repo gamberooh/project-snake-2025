@@ -6,18 +6,22 @@
 #include "arena.h"
 
 class Snake{
-  public:
-      Snake(int length, Arena &arena);
-      utl::DoubleLinkedListPos body;
+    public:
+        Snake();
+        utl::DoubleLinkedListPos body;
 
-      void changeDirection(int x, int y);
-      void update(clock_t updateTime, Arena &arena);
+        void initializeSnake(int speed, Arena &arena);
+        void changeDirection(int x, int y);
+        void update(clock_t updateTime, Arena &arena);
 
-  private:
-      int characterPerSecond;
-      clock_t lastUpdateTime;
-      utl::Position direction;
-      void moveSnake(Arena &arena);
+    private:
+        int characterPerSecond;
+        int length;
+        clock_t lastUpdateTime;
+        utl::Position direction;
+
+        void moveSnake(Arena &arena);
+        void setSpawnPos(Arena &arena);
 };
 
 

@@ -7,8 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Snake.dir/src/food.cpp.o.d"
   "CMakeFiles/Snake.dir/src/game.cpp.o"
   "CMakeFiles/Snake.dir/src/game.cpp.o.d"
-  "CMakeFiles/Snake.dir/src/levels.cpp.o"
-  "CMakeFiles/Snake.dir/src/levels.cpp.o.d"
   "CMakeFiles/Snake.dir/src/menu.cpp.o"
   "CMakeFiles/Snake.dir/src/menu.cpp.o.d"
   "CMakeFiles/Snake.dir/src/ranking.cpp.o"

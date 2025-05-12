@@ -12,7 +12,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/gr8llo/Documents/project-snake-2025/Snake/src/arena.cpp" "CMakeFiles/Snake.dir/src/arena.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/arena.cpp.o.d"
   "/home/gr8llo/Documents/project-snake-2025/Snake/src/food.cpp" "CMakeFiles/Snake.dir/src/food.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/food.cpp.o.d"
   "/home/gr8llo/Documents/project-snake-2025/Snake/src/game.cpp" "CMakeFiles/Snake.dir/src/game.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/game.cpp.o.d"
-  "/home/gr8llo/Documents/project-snake-2025/Snake/src/levels.cpp" "CMakeFiles/Snake.dir/src/levels.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/levels.cpp.o.d"
   "/home/gr8llo/Documents/project-snake-2025/Snake/src/menu.cpp" "CMakeFiles/Snake.dir/src/menu.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/menu.cpp.o.d"
   "/home/gr8llo/Documents/project-snake-2025/Snake/src/ranking.cpp" "CMakeFiles/Snake.dir/src/ranking.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/ranking.cpp.o.d"
   "/home/gr8llo/Documents/project-snake-2025/Snake/src/singleLevel.cpp" "CMakeFiles/Snake.dir/src/singleLevel.cpp.o" "gcc" "CMakeFiles/Snake.dir/src/singleLevel.cpp.o.d"

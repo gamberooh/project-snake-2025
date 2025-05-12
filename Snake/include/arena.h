@@ -19,6 +19,7 @@ class Arena {
     private:
         void display(const utl::Position &snakeHead, const utl::Position &food) const;
         void setWindowPos() ;
+
         WINDOW *arenaWin;
 };
 

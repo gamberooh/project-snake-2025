@@ -2,12 +2,12 @@
 #include <cstdlib>
 #include <ctime>
 
-Snake::Snake(const int length, Arena &arena) : characterPerSecond(7), lastUpdateTime(0), direction(0, 0){
-    //da rivedere il punto di spawn
-    srand(time(NULL));
+Snake::Snake() : characterPerSecond(7), length(5), lastUpdateTime(0), direction(0, 0) {}
 
-    int spawnX = rand() % (arena.width/2) + arena.width/4;
-    int spawnY = rand() % (arena.height/2) + arena.height/4;
+void Snake::setSpawnPos(Arena &arena) {
+    srand(time(NULL));
+    const int spawnX = rand() % (arena.width/2) + arena.width/4;
+    const int spawnY = rand() % (arena.height/2) + arena.height/4;
 
     for(int i = 0; i < length; i++) {
         body.insert(spawnX - i, spawnY);
@@ -15,6 +15,12 @@ Snake::Snake(const int length, Arena &arena) : characterPerSecond(7), lastUpdate
     }
 }
 
+void Snake::initializeSnake(const int speed, Arena &arena) {
+    //da rivedere il punto di spawn
+    setSpawnPos(arena);
+    characterPerSecond = speed;
+
+}
 
 void Snake::changeDirection(int x, int y) {
     // verso destra = 1 0 => verso sinistra = -1 0 quindi se la somma è zero non posso andarci
@@ -23,7 +29,7 @@ void Snake::changeDirection(int x, int y) {
     if((direction.y + y)!=0) direction.y = y;
 }
 
-void Snake::update(clock_t updateTime, Arena &arena) {
+void Snake::update(const clock_t updateTime, Arena &arena) {
     lastUpdateTime += updateTime;
     if(lastUpdateTime >= (1000/characterPerSecond)) {
         moveSnake(arena);

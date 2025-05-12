@@ -7,8 +7,9 @@ namespace utl {
         int x, y;
         Position(int x, int y);
         Position();
+
         void add(Position add);
-        bool operator==(Position other) const;
+        bool operator==(const Position &other) const;
     };
 
     template <typename T>
@@ -23,8 +24,7 @@ namespace utl {
         Node<T> *head;
         Node<T> *tail;
         DoubleLinkedList();
-        protected:
-            Node<T>* createNode(T node);
+        void newNodeAtTheEnd();
     };
 
     struct DoubleLinkedListPos : DoubleLinkedList<Position> {
@@ -32,7 +32,6 @@ namespace utl {
         void insert(int x, int y);
         bool isMember(Position val) const;
     };
-
 
 }
 #endif //UTILITY_H

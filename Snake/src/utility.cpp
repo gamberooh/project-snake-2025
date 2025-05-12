@@ -1,4 +1,5 @@
 #include "../include/utility.h"
+#include "../include/singleLevel.h"
 #include <iostream>
 
 //Position
@@ -18,26 +19,41 @@ utl::Position::Position() {
 }
 
 
-bool utl::Position::operator==(const Position other) const {
-    if(other.x == this->x && other.y == this->y) return true;
-    else return false;
+bool utl::Position::operator==(const Position &other) const {
+    return (other.x == this->x && other.y == this->y);
 }
+
 
 //General DLL
 template <typename T>
 utl::DoubleLinkedList<T>::DoubleLinkedList() : head(NULL), tail(NULL) {}
 
 template<typename T>
-utl::Node<T>* utl::DoubleLinkedList<T>::createNode(T node) {
+void utl::DoubleLinkedList<T>::newNodeAtTheEnd() {
     auto newNode = new Node<T>;
+    if(head == NULL) {
+        head = newNode;
+        tail = newNode;
+    }
+    else {
+        tail->next = newNode;
+        newNode->prev = tail;
+        tail = newNode;
+    }
+}
+
+//Position DLL
+typedef utl::Node<utl::Position>* p_posNode;
+
+template class utl::DoubleLinkedList<utl::Position>;
+
+p_posNode createNode(utl::Position node) {
+    auto newNode = new utl::Node<utl::Position>;
     newNode->value = node;
     newNode->next = NULL;
     newNode->prev = NULL;
     return newNode;
 }
-
-//Position DLL
-typedef utl::Node<utl::Position>* p_posNode;
 
 void utl::DoubleLinkedListPos::insert(const int x, const int y) {
     Position pos(x, y);  //pos{} initialize all parameters to default value
@@ -71,8 +87,6 @@ void utl::DoubleLinkedListPos::moveLastFront() {
     tail = tmp;
 }
 
-template class utl::DoubleLinkedList<utl::Position>;
-
 bool utl::DoubleLinkedListPos::isMember(Position val) const {
     p_posNode tmp = head;
     while(tmp != NULL) {
@@ -82,4 +96,5 @@ bool utl::DoubleLinkedListPos::isMember(Position val) const {
     return false;
 }
 
+template class utl::DoubleLinkedList<SingleLevel>;
 

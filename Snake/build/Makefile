@@ -225,30 +225,6 @@ src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
-src/levels.o: src/levels.cpp.o
-.PHONY : src/levels.o
-
-# target to build an object file
-src/levels.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/levels.cpp.o
-.PHONY : src/levels.cpp.o
-
-src/levels.i: src/levels.cpp.i
-.PHONY : src/levels.i
-
-# target to preprocess a source file
-src/levels.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/levels.cpp.i
-.PHONY : src/levels.cpp.i
-
-src/levels.s: src/levels.cpp.s
-.PHONY : src/levels.s
-
-# target to generate assembly for a file
-src/levels.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/levels.cpp.s
-.PHONY : src/levels.cpp.s
-
 src/menu.o: src/menu.cpp.o
 .PHONY : src/menu.o
 
@@ -390,9 +366,6 @@ help:
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
-	@echo "... src/levels.o"
-	@echo "... src/levels.i"
-	@echo "... src/levels.s"
 	@echo "... src/menu.o"
 	@echo "... src/menu.i"
 	@echo "... src/menu.s"

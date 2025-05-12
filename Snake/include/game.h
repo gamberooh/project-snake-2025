@@ -3,7 +3,6 @@
 
 #include <ctime>
 #include "singleLevel.h"
-#include <ncurses.h>
 #include "utility.h"
 
 class Game {
@@ -15,11 +14,11 @@ class Game {
         bool isRunning;
         bool openMenu;
         int fps;
-        SingleLevel currentLevel;
-
+        utl::Node<SingleLevel>* currentLevel;
+        utl::DoubleLinkedList<SingleLevel> levelList;
 
         void processInput();
-        void update(clock_t updateTime);
+        void update(clock_t updateTime) const;
         void render() const;
 };
 

@@ -1,6 +1,8 @@
 #include "../include/food.h"
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
+#include <ostream>
 
 
 Food::Food() : scoreValue(10), spawnPos(0, 0) {}
