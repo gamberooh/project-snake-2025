@@ -1,0 +1,3 @@
+/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles/Snake.dir
+/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles/edit_cache.dir
+/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles/rebuild_cache.dir
