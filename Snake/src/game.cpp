@@ -47,20 +47,15 @@ void Game::processInput() {
         switch (getch()) {
             case KEY_UP: case 'w':
                 snake.changeDirection(0, -1);
-                // snake.changeDirection(0, -1);
             break;
             case KEY_DOWN: case 's':
                 snake.changeDirection(0, 1);
-                // snake.changeDirection(0, 1);
             break;
             case KEY_LEFT: case 'a':
                 snake.changeDirection(-1, 0);
-                // snake.changeDirection(-1, 0);
             break;
             case KEY_RIGHT: case 'd':
                 snake.changeDirection(1, 0);
-                // snake.changeDirection(1, 0);
-
             break;
             case 'q':
                 isRunning = false;

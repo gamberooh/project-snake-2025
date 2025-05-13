@@ -329,20 +329,9 @@ CMakeFiles/Snake.dir/src/game.cpp.o
  /home/gr8llo/Documents/project-snake-2025/Snake/include/singleLevel.h
  /home/gr8llo/Documents/project-snake-2025/Snake/include/snake.h
  /home/gr8llo/Documents/project-snake-2025/Snake/include/utility.h
- /usr/include/c++/13/bits/cxxabi_init_exception.h
- /usr/include/c++/13/bits/exception.h
- /usr/include/c++/13/bits/exception_defines.h
- /usr/include/c++/13/bits/exception_ptr.h
- /usr/include/c++/13/bits/hash_bytes.h
- /usr/include/c++/13/bits/move.h
- /usr/include/c++/13/bits/nested_exception.h
  /usr/include/c++/13/cstring
  /usr/include/c++/13/ctime
- /usr/include/c++/13/exception
- /usr/include/c++/13/new
  /usr/include/c++/13/pstl/pstl_config.h
- /usr/include/c++/13/type_traits
- /usr/include/c++/13/typeinfo
  /usr/include/curses.h
  /usr/include/features-time64.h
  /usr/include/features.h

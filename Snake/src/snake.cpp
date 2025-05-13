@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
-Snake::Snake() : characterPerSecond(7), length(5), lastUpdateTime(0), direction(0, 0) {}
+Snake::Snake() : characterPerSecond(7), length(5), lastUpdateTime(0), direction(0, 0), enableDirectionChange(true) {}
 
 void Snake::setSpawnPos(Arena &arena) {
     srand(time(NULL));
@@ -25,14 +25,18 @@ void Snake::initializeSnake(const int speed, Arena &arena) {
 void Snake::changeDirection(int x, int y) {
     // verso destra = 1 0 => verso sinistra = -1 0 quindi se la somma è zero non posso andarci
     // all'inizio direction = 0 quindi fermo fin che non si preme un tasto
-    if((direction.x + x)!=0) direction.x = x;
-    if((direction.y + y)!=0) direction.y = y;
+    if(enableDirectionChange) {
+        if((direction.x + x)!=0) direction.x = x;
+        if((direction.y + y)!=0) direction.y = y;
+        enableDirectionChange = false;
+    }
 }
 
 void Snake::update(const clock_t updateTime, Arena &arena) {
     lastUpdateTime += updateTime;
     if(lastUpdateTime >= (1000/characterPerSecond)) {
         moveSnake(arena);
+        enableDirectionChange = true;
         lastUpdateTime = 0;
     }
 }

@@ -1,6 +1,6 @@
 #include "include/game.h"
 
-void initializeNcurse() {
+void initializeNcurses() {
     initscr(); // Inizializza ncurses
     cbreak(); // Disabilita il buffering dell'input
     noecho(); // Non mostra i caratteri digitati
@@ -23,7 +23,7 @@ void initializeNcurse() {
 }
 
 int main() {
-    initializeNcurse();
+    initializeNcurses();
     Game snake;
     snake.run();
 }

@@ -19,6 +19,7 @@ class Snake{
         int length;
         clock_t lastUpdateTime;
         utl::Position direction;
+        bool enableDirectionChange;
 
         void moveSnake(Arena &arena);
         void setSpawnPos(Arena &arena);
