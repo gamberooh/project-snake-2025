@@ -57,4 +57,5 @@ CMakeFiles/Snake.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
  /usr/include/unctrl.h /usr/include/curses.h \
- /home/gr8llo/Documents/project-snake-2025/Snake/include/food.h
+ /home/gr8llo/Documents/project-snake-2025/Snake/include/food.h \
+ /home/gr8llo/Documents/project-snake-2025/Snake/include/menu.h

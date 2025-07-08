@@ -12,6 +12,18 @@ namespace utl {
         bool operator==(const Position &other) const;
     };
 
+    //Colors
+    enum colorPair {
+        BLACK,  // init_pair(0, COLOR_BLACK, -1);
+        GREEN,   // init_pair(1, COLOR_GREEN, -1);
+        RED,     // init_pair(2, COLOR_RED, -1);
+        YELLOW,  // init_pair(3, COLOR_YELLOW, -1);
+        WHITE,   // init_pair(4, COLOR_WHITE, -1);
+        BLUE,     // init_pair(5, COLOR_BLUE, -1);
+    };
+    //COLORE SCRITTA _ COLORE SFONDO
+    //se lo sfondo è trasparente nulla
+
     template <typename T>
     struct Node{
         T value;

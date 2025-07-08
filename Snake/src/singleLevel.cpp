@@ -7,6 +7,8 @@ Stat::Stat() {
     snakeSpeed = 3;
     currentScore = 0;
     endLevelBonus = 100;
+    bestScore=0;
+    goal=100;
 }
 
 void Stat::computeLevelStats(const int id) {

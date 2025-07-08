@@ -58,4 +58,5 @@ CMakeFiles/Snake.dir/src/game.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
  /usr/include/unctrl.h /usr/include/curses.h \
  /home/gr8llo/Documents/project-snake-2025/Snake/src/../include/food.h \
+ /home/gr8llo/Documents/project-snake-2025/Snake/src/../include/menu.h \
  /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h

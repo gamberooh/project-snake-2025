@@ -23,6 +23,4 @@ class Arena {
         WINDOW *arenaWin;
 };
 
-
-
 #endif //ARENA_H

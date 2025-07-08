@@ -4,6 +4,7 @@
 #include <ctime>
 #include "singleLevel.h"
 #include "utility.h"
+#include "menu.h"
 
 class Game {
     public:
@@ -13,6 +14,7 @@ class Game {
     private:
         bool isRunning;
         bool openMenu;
+        Menu menu;
         int fps;
         utl::Node<SingleLevel>* currentLevel;
         utl::DoubleLinkedList<SingleLevel> levelList;
@@ -20,6 +22,8 @@ class Game {
         void processInput();
         void update(clock_t updateTime) const;
         void render() const;
+
+        void addLevels(const int nLevels);
 };
 
 

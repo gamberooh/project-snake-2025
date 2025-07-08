@@ -15,6 +15,8 @@ struct Stat {
     //punti
     int currentScore;
     int endLevelBonus;
+    int goal;
+    int bestScore;
 
     Stat();
     void computeLevelStats(int id);

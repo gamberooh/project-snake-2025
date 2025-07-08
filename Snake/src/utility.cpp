@@ -23,7 +23,6 @@ bool utl::Position::operator==(const Position &other) const {
     return (other.x == this->x && other.y == this->y);
 }
 
-
 //General DLL
 template <typename T>
 utl::DoubleLinkedList<T>::DoubleLinkedList() : head(NULL), tail(NULL) {}

@@ -34,12 +34,12 @@ void Arena::display(const utl::Position &snakeHead, const utl::Position &food) c
         for (int j = 0; j < width; j++) {
             if (arena[i][j] == true) {
                 if (i == food.y && j == food.x) {
-                    mvwaddch(arenaWin, i + 1, j + 1, '&' | COLOR_PAIR(2) | A_BOLD);
+                    mvwaddch(arenaWin, i + 1, j + 1, '&' | COLOR_PAIR(utl::RED) | A_BOLD);
                 }
                 else if (i == snakeHead.y && j == snakeHead.x) {
-                    mvwaddch(arenaWin, i + 1, j + 1, '@' | COLOR_PAIR(1) | A_BOLD);
+                    mvwaddch(arenaWin, i + 1, j + 1, '@' | COLOR_PAIR(utl::GREEN) | A_BOLD);
                 } else{
-                    mvwaddch(arenaWin, i + 1, j + 1, '0' | COLOR_PAIR(1) | A_BOLD);
+                    mvwaddch(arenaWin, i + 1, j + 1, '0' | COLOR_PAIR(utl::GREEN) | A_BOLD);
                 }
             }
         }
@@ -52,9 +52,9 @@ void Arena::render(const utl::Position &snakeHead, const utl::Position &food, co
     {
         wattron(arenaWin, A_BOLD);
         mvwprintw(arenaWin, 0, 1, "Score:");
-        wattron(arenaWin, COLOR_PAIR(3));
+        wattron(arenaWin, COLOR_PAIR(utl::YELLOW));
         mvwprintw(arenaWin, 0, 7, "%d", score);
-        wattroff(arenaWin, COLOR_PAIR(3));
+        wattroff(arenaWin, COLOR_PAIR(utl::YELLOW));
         wattron(arenaWin, A_BOLD);
     }//print score
     display(snakeHead, food);

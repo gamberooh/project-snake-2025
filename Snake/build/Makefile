@@ -225,6 +225,30 @@ src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
+src/log.o: src/log.cpp.o
+.PHONY : src/log.o
+
+# target to build an object file
+src/log.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/log.cpp.o
+.PHONY : src/log.cpp.o
+
+src/log.i: src/log.cpp.i
+.PHONY : src/log.i
+
+# target to preprocess a source file
+src/log.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/log.cpp.i
+.PHONY : src/log.cpp.i
+
+src/log.s: src/log.cpp.s
+.PHONY : src/log.s
+
+# target to generate assembly for a file
+src/log.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/log.cpp.s
+.PHONY : src/log.cpp.s
+
 src/menu.o: src/menu.cpp.o
 .PHONY : src/menu.o
 
@@ -248,30 +272,6 @@ src/menu.s: src/menu.cpp.s
 src/menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/menu.cpp.s
 .PHONY : src/menu.cpp.s
-
-src/ranking.o: src/ranking.cpp.o
-.PHONY : src/ranking.o
-
-# target to build an object file
-src/ranking.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/ranking.cpp.o
-.PHONY : src/ranking.cpp.o
-
-src/ranking.i: src/ranking.cpp.i
-.PHONY : src/ranking.i
-
-# target to preprocess a source file
-src/ranking.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/ranking.cpp.i
-.PHONY : src/ranking.cpp.i
-
-src/ranking.s: src/ranking.cpp.s
-.PHONY : src/ranking.s
-
-# target to generate assembly for a file
-src/ranking.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/ranking.cpp.s
-.PHONY : src/ranking.cpp.s
 
 src/singleLevel.o: src/singleLevel.cpp.o
 .PHONY : src/singleLevel.o
@@ -366,12 +366,12 @@ help:
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/log.o"
+	@echo "... src/log.i"
+	@echo "... src/log.s"
 	@echo "... src/menu.o"
 	@echo "... src/menu.i"
 	@echo "... src/menu.s"
-	@echo "... src/ranking.o"
-	@echo "... src/ranking.i"
-	@echo "... src/ranking.s"
 	@echo "... src/singleLevel.o"
 	@echo "... src/singleLevel.i"
 	@echo "... src/singleLevel.s"

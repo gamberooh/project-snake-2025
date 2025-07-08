@@ -5,6 +5,16 @@ Game::Game() : isRunning(true), openMenu(false), fps(60) {
     levelList.newNodeAtTheEnd();
     currentLevel = levelList.head;
     currentLevel -> value.setLevelStat(0); //0 perchè il parametro fa rimerifento all'id del livello precedente
+    addLevels(50);
+}
+
+void Game::addLevels(const int nLevels) {
+    utl::Node<SingleLevel>* head = currentLevel;    //all'inizio currentLevel è la testa
+    for (int i=1; i<nLevels; i++) {
+        levelList.newNodeAtTheEnd();
+        head = head -> next;
+        head -> value.setLevelStat(i);
+    }
 }
 
 clock_t getElapsedTimeMS(clock_t &start){
@@ -23,7 +33,7 @@ void Game::run(){
     const clock_t updateTime = (1000/fps); // => 1/fps = second_per_frame => *1000 = millisecond_per_frame
     clock_t elapsed = 1000/fps; //esegue il primo frame
 
-    while(isRunning) {   //bisogna mettere un modo per uscire (messo nel processInput)
+    while(isRunning) {
         processInput();
         elapsed += getElapsedTimeMS(start);
         while(elapsed >= updateTime) {
@@ -43,23 +53,20 @@ void Game::run(){
 
 
 void Game::processInput() {
+    int key=getch();
     if(!openMenu) {
-        switch (getch()) {
+        switch (key) {
             case KEY_UP: case 'w':
                 snake.changeDirection(0, -1);
-            break;
+                break;
             case KEY_DOWN: case 's':
                 snake.changeDirection(0, 1);
-            break;
+                break;
             case KEY_LEFT: case 'a':
                 snake.changeDirection(-1, 0);
-            break;
+                break;
             case KEY_RIGHT: case 'd':
                 snake.changeDirection(1, 0);
-            break;
-            case 'q':
-                isRunning = false;
-                endwin();
                 break;
             case 'm':
                 openMenu = true;
@@ -70,56 +77,25 @@ void Game::processInput() {
         }
     }
     else {
-        switch (getch()) {
-            case 'm':
-                openMenu = false;
-                break;
-            case KEY_RIGHT:
-                if(currentLevel->next != NULL) currentLevel = currentLevel->next;
-            case KEY_LEFT:
-                if(currentLevel->prev != NULL) currentLevel = currentLevel->prev;
-            default:
-                break;
-        }
+        openMenu = menu.handleInput(key, currentLevel, isRunning);
+        if(!isRunning) endwin();
     }
 }
+
 
 void Game::update(const clock_t updateTime) const {
     if (!openMenu) {
         snake.update(updateTime, arena);
         if(food.update(snake,arena)) score += food.scoreValue;
     }
-    else {
-
-    }
-
 }
 
-void printTestMenu() {
-    const char *str[6] ={
-        R"(                  _        )",
-        R"(                 | |       )",
-        R"(  ___ _ __   __ _| | _____ )",
-        R"( / __| '_ \ / _` | |/ / _ \)",
-        R"( \__ \ | | | (_| |   <  __/)",
-        R"( |___/_| |_|\__,_|_|\_\___|)",
-       };
-    //R serve per raw string non interpreta le sequenze di escape
-    int rows, cols;
-    getmaxyx(stdscr, rows, cols);
-    rows -= 6;
-    cols -= (int)strlen(str[0]);
-    for(int i = 0; i < 6; i++) {
-        mvprintw(rows/2+i, cols/2, "%s", str[i]);
-    }
-}
 
 void Game::render() const{
     if(!openMenu) {
         arena.render(snake.body.head->value, food.spawnPos, score);
     }
     else {
-        erase();
-        printTestMenu();
+        menu.renderCurrentPage(currentLevel, levelList.head, levelList.tail); 
     }
 }
