@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+resources/ASCIIart.o: resources/ASCIIart.cpp.o
+.PHONY : resources/ASCIIart.o
+
+# target to build an object file
+resources/ASCIIart.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/resources/ASCIIart.cpp.o
+.PHONY : resources/ASCIIart.cpp.o
+
+resources/ASCIIart.i: resources/ASCIIart.cpp.i
+.PHONY : resources/ASCIIart.i
+
+# target to preprocess a source file
+resources/ASCIIart.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/resources/ASCIIart.cpp.i
+.PHONY : resources/ASCIIart.cpp.i
+
+resources/ASCIIart.s: resources/ASCIIart.cpp.s
+.PHONY : resources/ASCIIart.s
+
+# target to generate assembly for a file
+resources/ASCIIart.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/resources/ASCIIart.cpp.s
+.PHONY : resources/ASCIIart.cpp.s
+
 src/arena.o: src/arena.cpp.o
 .PHONY : src/arena.o
 
@@ -273,6 +297,30 @@ src/menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/menu.cpp.s
 .PHONY : src/menu.cpp.s
 
+src/ranking.o: src/ranking.cpp.o
+.PHONY : src/ranking.o
+
+# target to build an object file
+src/ranking.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/ranking.cpp.o
+.PHONY : src/ranking.cpp.o
+
+src/ranking.i: src/ranking.cpp.i
+.PHONY : src/ranking.i
+
+# target to preprocess a source file
+src/ranking.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/ranking.cpp.i
+.PHONY : src/ranking.cpp.i
+
+src/ranking.s: src/ranking.cpp.s
+.PHONY : src/ranking.s
+
+# target to generate assembly for a file
+src/ranking.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/ranking.cpp.s
+.PHONY : src/ranking.cpp.s
+
 src/singleLevel.o: src/singleLevel.cpp.o
 .PHONY : src/singleLevel.o
 
@@ -296,6 +344,30 @@ src/singleLevel.s: src/singleLevel.cpp.s
 src/singleLevel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/singleLevel.cpp.s
 .PHONY : src/singleLevel.cpp.s
+
+src/singleRank.o: src/singleRank.cpp.o
+.PHONY : src/singleRank.o
+
+# target to build an object file
+src/singleRank.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/singleRank.cpp.o
+.PHONY : src/singleRank.cpp.o
+
+src/singleRank.i: src/singleRank.cpp.i
+.PHONY : src/singleRank.i
+
+# target to preprocess a source file
+src/singleRank.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/singleRank.cpp.i
+.PHONY : src/singleRank.cpp.i
+
+src/singleRank.s: src/singleRank.cpp.s
+.PHONY : src/singleRank.s
+
+# target to generate assembly for a file
+src/singleRank.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/src/singleRank.cpp.s
+.PHONY : src/singleRank.cpp.s
 
 src/snake.o: src/snake.cpp.o
 .PHONY : src/snake.o
@@ -357,6 +429,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... resources/ASCIIart.o"
+	@echo "... resources/ASCIIart.i"
+	@echo "... resources/ASCIIart.s"
 	@echo "... src/arena.o"
 	@echo "... src/arena.i"
 	@echo "... src/arena.s"
@@ -372,9 +447,15 @@ help:
 	@echo "... src/menu.o"
 	@echo "... src/menu.i"
 	@echo "... src/menu.s"
+	@echo "... src/ranking.o"
+	@echo "... src/ranking.i"
+	@echo "... src/ranking.s"
 	@echo "... src/singleLevel.o"
 	@echo "... src/singleLevel.i"
 	@echo "... src/singleLevel.s"
+	@echo "... src/singleRank.o"
+	@echo "... src/singleRank.i"
+	@echo "... src/singleRank.s"
 	@echo "... src/snake.o"
 	@echo "... src/snake.i"
 	@echo "... src/snake.s"

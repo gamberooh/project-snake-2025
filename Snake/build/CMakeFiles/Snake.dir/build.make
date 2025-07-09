@@ -83,10 +83,24 @@ CMakeFiles/Snake.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gr8llo/Documents/project-snake-2025/Snake/main.cpp -o CMakeFiles/Snake.dir/main.cpp.s
 
+CMakeFiles/Snake.dir/resources/ASCIIart.cpp.o: CMakeFiles/Snake.dir/flags.make
+CMakeFiles/Snake.dir/resources/ASCIIart.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/resources/ASCIIart.cpp
+CMakeFiles/Snake.dir/resources/ASCIIart.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Snake.dir/resources/ASCIIart.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/resources/ASCIIart.cpp.o -MF CMakeFiles/Snake.dir/resources/ASCIIart.cpp.o.d -o CMakeFiles/Snake.dir/resources/ASCIIart.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/resources/ASCIIart.cpp
+
+CMakeFiles/Snake.dir/resources/ASCIIart.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Snake.dir/resources/ASCIIart.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gr8llo/Documents/project-snake-2025/Snake/resources/ASCIIart.cpp > CMakeFiles/Snake.dir/resources/ASCIIart.cpp.i
+
+CMakeFiles/Snake.dir/resources/ASCIIart.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/resources/ASCIIart.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gr8llo/Documents/project-snake-2025/Snake/resources/ASCIIart.cpp -o CMakeFiles/Snake.dir/resources/ASCIIart.cpp.s
+
 CMakeFiles/Snake.dir/src/arena.cpp.o: CMakeFiles/Snake.dir/flags.make
 CMakeFiles/Snake.dir/src/arena.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/arena.cpp
 CMakeFiles/Snake.dir/src/arena.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Snake.dir/src/arena.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Snake.dir/src/arena.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/src/arena.cpp.o -MF CMakeFiles/Snake.dir/src/arena.cpp.o.d -o CMakeFiles/Snake.dir/src/arena.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/src/arena.cpp
 
 CMakeFiles/Snake.dir/src/arena.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/Snake.dir/src/arena.cpp.s: cmake_force
 CMakeFiles/Snake.dir/src/food.cpp.o: CMakeFiles/Snake.dir/flags.make
 CMakeFiles/Snake.dir/src/food.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/food.cpp
 CMakeFiles/Snake.dir/src/food.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Snake.dir/src/food.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Snake.dir/src/food.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/src/food.cpp.o -MF CMakeFiles/Snake.dir/src/food.cpp.o.d -o CMakeFiles/Snake.dir/src/food.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/src/food.cpp
 
 CMakeFiles/Snake.dir/src/food.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/Snake.dir/src/food.cpp.s: cmake_force
 CMakeFiles/Snake.dir/src/game.cpp.o: CMakeFiles/Snake.dir/flags.make
 CMakeFiles/Snake.dir/src/game.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/game.cpp
 CMakeFiles/Snake.dir/src/game.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Snake.dir/src/game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Snake.dir/src/game.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/src/game.cpp.o -MF CMakeFiles/Snake.dir/src/game.cpp.o.d -o CMakeFiles/Snake.dir/src/game.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/src/game.cpp
 
 CMakeFiles/Snake.dir/src/game.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/Snake.dir/src/game.cpp.s: cmake_force
 CMakeFiles/Snake.dir/src/log.cpp.o: CMakeFiles/Snake.dir/flags.make
 CMakeFiles/Snake.dir/src/log.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/log.cpp
 CMakeFiles/Snake.dir/src/log.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Snake.dir/src/log.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Snake.dir/src/log.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/src/log.cpp.o -MF CMakeFiles/Snake.dir/src/log.cpp.o.d -o CMakeFiles/Snake.dir/src/log.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/src/log.cpp
 
 CMakeFiles/Snake.dir/src/log.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/Snake.dir/src/log.cpp.s: cmake_force
 CMakeFiles/Snake.dir/src/menu.cpp.o: CMakeFiles/Snake.dir/flags.make
 CMakeFiles/Snake.dir/src/menu.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/menu.cpp
 CMakeFiles/Snake.dir/src/menu.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Snake.dir/src/menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Snake.dir/src/menu.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/src/menu.cpp.o -MF CMakeFiles/Snake.dir/src/menu.cpp.o.d -o CMakeFiles/Snake.dir/src/menu.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/src/menu.cpp
 
 CMakeFiles/Snake.dir/src/menu.cpp.i: cmake_force
@@ -153,10 +167,24 @@ CMakeFiles/Snake.dir/src/menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/src/menu.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gr8llo/Documents/project-snake-2025/Snake/src/menu.cpp -o CMakeFiles/Snake.dir/src/menu.cpp.s
 
+CMakeFiles/Snake.dir/src/ranking.cpp.o: CMakeFiles/Snake.dir/flags.make
+CMakeFiles/Snake.dir/src/ranking.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/ranking.cpp
+CMakeFiles/Snake.dir/src/ranking.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Snake.dir/src/ranking.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/src/ranking.cpp.o -MF CMakeFiles/Snake.dir/src/ranking.cpp.o.d -o CMakeFiles/Snake.dir/src/ranking.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/src/ranking.cpp
+
+CMakeFiles/Snake.dir/src/ranking.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Snake.dir/src/ranking.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gr8llo/Documents/project-snake-2025/Snake/src/ranking.cpp > CMakeFiles/Snake.dir/src/ranking.cpp.i
+
+CMakeFiles/Snake.dir/src/ranking.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/src/ranking.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gr8llo/Documents/project-snake-2025/Snake/src/ranking.cpp -o CMakeFiles/Snake.dir/src/ranking.cpp.s
+
 CMakeFiles/Snake.dir/src/singleLevel.cpp.o: CMakeFiles/Snake.dir/flags.make
 CMakeFiles/Snake.dir/src/singleLevel.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/singleLevel.cpp
 CMakeFiles/Snake.dir/src/singleLevel.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Snake.dir/src/singleLevel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Snake.dir/src/singleLevel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/src/singleLevel.cpp.o -MF CMakeFiles/Snake.dir/src/singleLevel.cpp.o.d -o CMakeFiles/Snake.dir/src/singleLevel.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/src/singleLevel.cpp
 
 CMakeFiles/Snake.dir/src/singleLevel.cpp.i: cmake_force
@@ -167,10 +195,24 @@ CMakeFiles/Snake.dir/src/singleLevel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/src/singleLevel.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gr8llo/Documents/project-snake-2025/Snake/src/singleLevel.cpp -o CMakeFiles/Snake.dir/src/singleLevel.cpp.s
 
+CMakeFiles/Snake.dir/src/singleRank.cpp.o: CMakeFiles/Snake.dir/flags.make
+CMakeFiles/Snake.dir/src/singleRank.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/singleRank.cpp
+CMakeFiles/Snake.dir/src/singleRank.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Snake.dir/src/singleRank.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/src/singleRank.cpp.o -MF CMakeFiles/Snake.dir/src/singleRank.cpp.o.d -o CMakeFiles/Snake.dir/src/singleRank.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/src/singleRank.cpp
+
+CMakeFiles/Snake.dir/src/singleRank.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Snake.dir/src/singleRank.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gr8llo/Documents/project-snake-2025/Snake/src/singleRank.cpp > CMakeFiles/Snake.dir/src/singleRank.cpp.i
+
+CMakeFiles/Snake.dir/src/singleRank.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/src/singleRank.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gr8llo/Documents/project-snake-2025/Snake/src/singleRank.cpp -o CMakeFiles/Snake.dir/src/singleRank.cpp.s
+
 CMakeFiles/Snake.dir/src/snake.cpp.o: CMakeFiles/Snake.dir/flags.make
 CMakeFiles/Snake.dir/src/snake.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/snake.cpp
 CMakeFiles/Snake.dir/src/snake.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Snake.dir/src/snake.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Snake.dir/src/snake.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/src/snake.cpp.o -MF CMakeFiles/Snake.dir/src/snake.cpp.o.d -o CMakeFiles/Snake.dir/src/snake.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/src/snake.cpp
 
 CMakeFiles/Snake.dir/src/snake.cpp.i: cmake_force
@@ -184,7 +226,7 @@ CMakeFiles/Snake.dir/src/snake.cpp.s: cmake_force
 CMakeFiles/Snake.dir/src/utility.cpp.o: CMakeFiles/Snake.dir/flags.make
 CMakeFiles/Snake.dir/src/utility.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/utility.cpp
 CMakeFiles/Snake.dir/src/utility.cpp.o: CMakeFiles/Snake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Snake.dir/src/utility.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Snake.dir/src/utility.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Snake.dir/src/utility.cpp.o -MF CMakeFiles/Snake.dir/src/utility.cpp.o.d -o CMakeFiles/Snake.dir/src/utility.cpp.o -c /home/gr8llo/Documents/project-snake-2025/Snake/src/utility.cpp
 
 CMakeFiles/Snake.dir/src/utility.cpp.i: cmake_force
@@ -198,12 +240,15 @@ CMakeFiles/Snake.dir/src/utility.cpp.s: cmake_force
 # Object files for target Snake
 Snake_OBJECTS = \
 "CMakeFiles/Snake.dir/main.cpp.o" \
+"CMakeFiles/Snake.dir/resources/ASCIIart.cpp.o" \
 "CMakeFiles/Snake.dir/src/arena.cpp.o" \
 "CMakeFiles/Snake.dir/src/food.cpp.o" \
 "CMakeFiles/Snake.dir/src/game.cpp.o" \
 "CMakeFiles/Snake.dir/src/log.cpp.o" \
 "CMakeFiles/Snake.dir/src/menu.cpp.o" \
+"CMakeFiles/Snake.dir/src/ranking.cpp.o" \
 "CMakeFiles/Snake.dir/src/singleLevel.cpp.o" \
+"CMakeFiles/Snake.dir/src/singleRank.cpp.o" \
 "CMakeFiles/Snake.dir/src/snake.cpp.o" \
 "CMakeFiles/Snake.dir/src/utility.cpp.o"
 
@@ -211,19 +256,22 @@ Snake_OBJECTS = \
 Snake_EXTERNAL_OBJECTS =
 
 Snake: CMakeFiles/Snake.dir/main.cpp.o
+Snake: CMakeFiles/Snake.dir/resources/ASCIIart.cpp.o
 Snake: CMakeFiles/Snake.dir/src/arena.cpp.o
 Snake: CMakeFiles/Snake.dir/src/food.cpp.o
 Snake: CMakeFiles/Snake.dir/src/game.cpp.o
 Snake: CMakeFiles/Snake.dir/src/log.cpp.o
 Snake: CMakeFiles/Snake.dir/src/menu.cpp.o
+Snake: CMakeFiles/Snake.dir/src/ranking.cpp.o
 Snake: CMakeFiles/Snake.dir/src/singleLevel.cpp.o
+Snake: CMakeFiles/Snake.dir/src/singleRank.cpp.o
 Snake: CMakeFiles/Snake.dir/src/snake.cpp.o
 Snake: CMakeFiles/Snake.dir/src/utility.cpp.o
 Snake: CMakeFiles/Snake.dir/build.make
 Snake: /usr/lib/x86_64-linux-gnu/libcurses.so
 Snake: /usr/lib/x86_64-linux-gnu/libform.so
 Snake: CMakeFiles/Snake.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Snake"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/gr8llo/Documents/project-snake-2025/Snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Snake"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Snake.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
