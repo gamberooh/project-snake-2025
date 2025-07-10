@@ -15,17 +15,14 @@ class Game {
         bool isRunning;
         bool openMenu;
         Menu menu;
-        int fps;
+        const int fps;
+        const int nLevels; 
         utl::Node<SingleLevel>* currentLevel;
         utl::DoubleLinkedList<SingleLevel> levelList;
 
         void processInput();
-        void update(clock_t updateTime) const;
+        void update(double updateTime);
         void render() const;
-
-        void addLevels(const int nLevels);
 };
-
-
 
 #endif //GAME_H

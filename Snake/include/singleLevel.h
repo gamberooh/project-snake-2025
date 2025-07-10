@@ -10,7 +10,7 @@ struct Stat {
     //tempo
     double timeLimit;
     double timePassed;  // con il tempo passato e la durata totale si riesce a capire lo stato del livello, iniziato, nuovo, finito
-    //velocita
+    //velocità
     int snakeSpeed;
     //punti
     int currentScore;
@@ -31,6 +31,7 @@ class SingleLevel {
         Stat stat;
 
         void setLevelStat(int levelId);
+        bool updateLevelStat(double deltaTime);
         //più i metodi che vorrai implementare
 };
 

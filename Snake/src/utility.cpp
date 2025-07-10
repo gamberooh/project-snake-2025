@@ -1,5 +1,6 @@
 #include "../include/utility.h"
 #include "../include/singleLevel.h"
+#include "../include/singleRank.h"
 #include <iostream>
 
 //Position
@@ -25,7 +26,7 @@ bool utl::Position::operator==(const Position &other) const {
 
 //General DLL
 template <typename T>
-utl::DoubleLinkedList<T>::DoubleLinkedList() : head(NULL), tail(NULL) {}
+utl::DoubleLinkedList<T>::DoubleLinkedList() : head(NULL), tail(NULL), size(0) {}
 
 template<typename T>
 void utl::DoubleLinkedList<T>::newNodeAtTheEnd() {
@@ -39,6 +40,7 @@ void utl::DoubleLinkedList<T>::newNodeAtTheEnd() {
         newNode->prev = tail;
         tail = newNode;
     }
+    size++;
 }
 
 //Position DLL
@@ -97,3 +99,5 @@ bool utl::DoubleLinkedListPos::isMember(Position val) const {
 
 template class utl::DoubleLinkedList<SingleLevel>;
 
+//SingleRanking DDL
+template class utl::DoubleLinkedList<SingleRank>;

@@ -4,6 +4,7 @@
 #include <ncurses.h>
 #include "utility.h"
 #include "singleLevel.h"
+#include "ranking.h"
 
 enum menuPage{
     HOME,
@@ -21,18 +22,30 @@ class Menu {
         Menu();
         bool handleInput(int key, utl::Node<SingleLevel>* &currentLevel, bool &isRunning);
         void renderCurrentPage(utl::Node<SingleLevel>* currentLevel, utl::Node<SingleLevel>* head, utl::Node<SingleLevel>* tail) const;
+        void setGameoverPage();
+        void setLevelPage();
+        char nickname[31];
 
     private:
         const int totalPages;
         menuPage currentPage;
+        Ranking ranking;
         //Setup
         void setupGame();
-        void renderSetup() const;
         //Levels
         bool handleInputLevels(int key, utl::Node<SingleLevel>* &currentLevel);
         void renderLevels(utl::Node<SingleLevel>* currentLevel, utl::Node<SingleLevel>* head, utl::Node<SingleLevel>* tail) const;
+
+        bool handleInputGameover(int key, bool &isRunning);
+        void renderGameover() const;
+
+        void renderHome() const;
+
+        void handleInputRank(int key);
+        void renderRank() const;
+
+         
         //Uguale per le altre (le funzioni di render devono essere const)
-        void printBackground() const;
 };
 
 

@@ -20,6 +20,9 @@ namespace utl {
         YELLOW,  // init_pair(3, COLOR_YELLOW, -1);
         WHITE,   // init_pair(4, COLOR_WHITE, -1);
         BLUE,     // init_pair(5, COLOR_BLUE, -1);
+        CYAN,   //init_pair(6, COLOR_CYAN, -1);
+        //==SPECIAL COLORS==
+        DARK_GREEN, //init_pair(6, DARK_GREEN, -1)
     };
     //COLORE SCRITTA _ COLORE SFONDO
     //se lo sfondo è trasparente nulla
@@ -35,6 +38,8 @@ namespace utl {
     struct DoubleLinkedList{
         Node<T> *head;
         Node<T> *tail;
+        int size;
+
         DoubleLinkedList();
         void newNodeAtTheEnd();
     };

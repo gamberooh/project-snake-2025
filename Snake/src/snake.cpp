@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
-Snake::Snake() : characterPerSecond(7), length(5), lastUpdateTime(0), direction(0, 0), enableDirectionChange(true) {}
+Snake::Snake() : characterPerSecond(7), length(7), lastUpdateTime(0), direction(0, 0), enableDirectionChange(true), firstMovement(false) {}
 
 void Snake::setSpawnPos(Arena &arena) {
     srand(time(NULL));
@@ -25,6 +25,8 @@ void Snake::initializeSnake(const int speed, Arena &arena) {
 void Snake::changeDirection(int x, int y) {
     // verso destra = 1 0 => verso sinistra = -1 0 quindi se la somma è zero non posso andarci
     // all'inizio direction = 0 quindi fermo fin che non si preme un tasto
+    if(!firstMovement) firstMovement = true; //prima movimento
+
     if(enableDirectionChange) {
         if((direction.x + x)!=0) direction.x = x;
         if((direction.y + y)!=0) direction.y = y;
@@ -32,13 +34,14 @@ void Snake::changeDirection(int x, int y) {
     }
 }
 
-void Snake::update(const clock_t updateTime, Arena &arena) {
+bool Snake::update(const double updateTime, Arena &arena) {
     lastUpdateTime += updateTime;
     if(lastUpdateTime >= (1000/characterPerSecond)) {
-        moveSnake(arena);
         enableDirectionChange = true;
         lastUpdateTime = 0;
+        return moveSnake(arena);
     }
+    return true;
 }
 
 utl::Position boundCheckUpdate(utl::Position pos, const int width, const int height) {
@@ -49,7 +52,9 @@ utl::Position boundCheckUpdate(utl::Position pos, const int width, const int hei
     return pos;
 }
 
-void Snake::moveSnake(Arena &arena) {
+bool Snake::moveSnake(Arena &arena) {
+    if(!firstMovement) return true; //se non si è mai ancora mosso termino la funzione
+
     utl::Position newpos;
     newpos.x = direction.x;
     newpos.y = direction.y;
@@ -57,12 +62,14 @@ void Snake::moveSnake(Arena &arena) {
     newpos = boundCheckUpdate(newpos, arena.width, arena.height);
 
     //check self collision
-    if(body.isMember(newpos)) return;
+    if(body.isMember(newpos)) return false;
 
     arena.arena[body.tail->value.y][body.tail->value.x] = false;
     body.moveLastFront();
     body.head->value = newpos;
     arena.arena[body.head->value.y][body.head->value.x] = true;
+
+    return true;
 }
 
 

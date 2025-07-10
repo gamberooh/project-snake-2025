@@ -1,4 +1,5 @@
 #include "../include/singleLevel.h"
+#include <iostream>
 
 Stat::Stat() {
     id = 1;
@@ -29,5 +30,18 @@ void SingleLevel::setLevelStat(const int prevLevelId) {
     food.setPosition(snake, arena);
 }
 
+//true -> proseguo normale -- false-> è sucesso qualcosa
+bool SingleLevel::updateLevelStat(double deltaTime){
+    //score
+    stat.bestScore = std::max(stat.currentScore, stat.bestScore);
 
-
+    //updateTime
+    stat.timePassed += (deltaTime/1000);
+    if(stat.timePassed >= stat.timeLimit){
+        //endlLevelBonus
+        stat.currentScore += stat.endLevelBonus;
+        stat.bestScore = std::max(stat.currentScore, stat.bestScore);
+        return false;
+    }
+    return true;
+}

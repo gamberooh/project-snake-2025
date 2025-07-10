@@ -1,4 +1,5 @@
 #include "../include/arena.h"
+#include <cstring>
 
 Arena::Arena(): height(30), width(30){
     //initialize arena to false
@@ -46,16 +47,24 @@ void Arena::display(const utl::Position &snakeHead, const utl::Position &food) c
     }
 }
 
-void Arena::render(const utl::Position &snakeHead, const utl::Position &food, const int &score) const{
+void Arena::render(const utl::Position &snakeHead, const utl::Position &food, const int &currentScore, const double timeRemaingValue) const {
     werase(arenaWin);
     box(arenaWin, 0, 0);
     {
+        const int size = 10;
+        char timeRemaining[size];
+        snprintf(timeRemaining, size, "%.2f", (timeRemaingValue));  //%.2f stampa due cifre decimali
+
         wattron(arenaWin, A_BOLD);
         mvwprintw(arenaWin, 0, 1, "Score:");
+        mvwprintw(arenaWin, 0, width - strlen("Time:")-strlen(timeRemaining)+1, "Time:");
         wattron(arenaWin, COLOR_PAIR(utl::YELLOW));
-        mvwprintw(arenaWin, 0, 7, "%d", score);
-        wattroff(arenaWin, COLOR_PAIR(utl::YELLOW));
-        wattron(arenaWin, A_BOLD);
+        mvwprintw(arenaWin, 0, 7, "%d", currentScore);
+        mvwprintw(arenaWin, 0, width-strlen(timeRemaining)+1, "%s", timeRemaining);
+        wattroff(arenaWin, COLOR_PAIR(utl::YELLOW) | A_BOLD);
+        
+
+
     }//print score
     display(snakeHead, food);
     wrefresh(arenaWin);

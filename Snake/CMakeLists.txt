@@ -14,7 +14,8 @@ file(GLOB SOURCES "src/*.cpp")
 
 # Aggiungi l'eseguibile
 add_executable(Snake main.cpp
-                ${SOURCES})
+                     resources/ASCIIart.cpp
+                     ${SOURCES})
 
 # Collega le librerie NCurses all'eseguibile
 target_link_libraries(Snake ${CURSES_LIBRARIES})

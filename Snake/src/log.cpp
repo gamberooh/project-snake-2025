@@ -1,7 +1,3 @@
-//
-// Created by gamberooh on 04/07/25.
-//
-
 #include "../include/log.h"
 #include <cstring>
 

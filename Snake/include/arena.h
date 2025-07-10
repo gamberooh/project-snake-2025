@@ -13,7 +13,7 @@ class Arena {
 
         void setWindow();
         //quando si passa per riferimento il const serve anche nella dichiarazione nel file.h
-        void render(const utl::Position &snakeHead, const utl::Position &food, const int &score) const;
+        void render(const utl::Position &snakeHead, const utl::Position &food, const int &score, const double timeRemainingValue) const;
 
 
     private:

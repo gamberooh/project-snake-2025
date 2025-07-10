@@ -1,6 +1,3 @@
-//
-// Created by gamberooh on 04/07/25.
-//
 #include <iostream>
 #include <fstream>
 #ifndef LOG_H
@@ -18,7 +15,5 @@ public:
     //void deleteLog(char* nickname);
     int getLevelScore(char* nickname, int levelId);
 };
-
-
 
 #endif //LOG_H
