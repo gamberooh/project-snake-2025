@@ -11,12 +11,15 @@ void printGameoverArt();
 void printStunnedSnakeArt();
 
 void printSnakeHomeArt();
+int getHomeSnakeSize();
 
 void printRankingArt();
 
-void printLeafArt();
+void printLeavesArt();
 
 void printHappySnakeArt();
 int getHappySnakeSize();
+
+void printVineArt();
 
 #endif //ASCIIART_H

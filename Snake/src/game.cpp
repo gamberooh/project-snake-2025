@@ -71,6 +71,11 @@ void Game::processInput() {
             case 'm':
                 openMenu = true;
                 break;
+            case 'l':
+                openMenu = true;
+                menu.setLevelPage();
+            case KEY_RESIZE:
+                if(!openMenu) arena.fixPos();
             default:
                 // Handle other key presses
                 break;
@@ -78,6 +83,7 @@ void Game::processInput() {
     }
     else {
         openMenu = menu.handleInput(key, currentLevel, isRunning);
+        if(!openMenu) arena.fixPos(); //se si chiude il menu e si torna al gioco, si deve sistemare la posizione dell'arena per sicurezza
         if(!isRunning) endwin();
     }
 }
@@ -86,6 +92,7 @@ void Game::processInput() {
 void Game::update(const double updateTime) {
     if (!openMenu) {
         //gameOver
+        if(!snake.firstMovement) return; //se non si è ancora mosso il serpente stoppo la funzione
         if(!snake.update(updateTime, arena)){ // = a lo snake si è mangiato con se stesso
             openMenu = true;
             menu.setGameoverPage();
@@ -99,9 +106,7 @@ void Game::update(const double updateTime) {
             menu.setLevelPage();
             //altre cose di fine livello
         }
-
-    }
-    //updateLevel();
+    }//updateLevel();
 }
 
 

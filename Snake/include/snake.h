@@ -8,6 +8,7 @@ class Snake{
     public:
         Snake();
         utl::DoubleLinkedListPos body;
+        bool firstMovement;
 
         void initializeSnake(int speed, Arena &arena);
         void changeDirection(int x, int y);
@@ -19,7 +20,6 @@ class Snake{
         double lastUpdateTime;
         utl::Position direction;
         bool enableDirectionChange;
-        bool firstMovement;
 
         bool moveSnake(Arena &arena);
         void setSpawnPos(Arena &arena);

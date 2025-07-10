@@ -15,11 +15,13 @@ struct Stat {
     //punti
     int currentScore;
     int endLevelBonus;
-    int goal;
+    int foodValue;
+    bool alreadyTakeBonus;
     int bestScore;
 
     Stat();
-    void computeLevelStats(int id);
+    void computeLevelStats(const int id);
+    void resetLevel();
 };
 
 class SingleLevel {

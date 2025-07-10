@@ -1,4 +1,5 @@
 #include "../include/arena.h"
+#include "../resources/ASCIIart.h"
 #include <cstring>
 
 Arena::Arena(): height(30), width(30){
@@ -30,18 +31,23 @@ void Arena::setWindowPos(){
     mvwin(arenaWin, offsetY ,offsetX);
 }
 
+void Arena::fixPos(){
+    clear();
+    printLeavesArt();
+    setWindowPos();
+    refresh();
+}
+
 void Arena::display(const utl::Position &snakeHead, const utl::Position &food) const {
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             if (arena[i][j] == true) {
-                if (i == food.y && j == food.x) {
+                if (i == food.y && j == food.x)
                     mvwaddch(arenaWin, i + 1, j + 1, '&' | COLOR_PAIR(utl::RED) | A_BOLD);
-                }
-                else if (i == snakeHead.y && j == snakeHead.x) {
+                else if (i == snakeHead.y && j == snakeHead.x)
                     mvwaddch(arenaWin, i + 1, j + 1, '@' | COLOR_PAIR(utl::GREEN) | A_BOLD);
-                } else{
+                else
                     mvwaddch(arenaWin, i + 1, j + 1, '0' | COLOR_PAIR(utl::GREEN) | A_BOLD);
-                }
             }
         }
     }
@@ -62,10 +68,7 @@ void Arena::render(const utl::Position &snakeHead, const utl::Position &food, co
         mvwprintw(arenaWin, 0, 7, "%d", currentScore);
         mvwprintw(arenaWin, 0, width-strlen(timeRemaining)+1, "%s", timeRemaining);
         wattroff(arenaWin, COLOR_PAIR(utl::YELLOW) | A_BOLD);
-        
-
-
-    }//print score
+    }  //print score and time
     display(snakeHead, food);
     wrefresh(arenaWin);
 }

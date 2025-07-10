@@ -3,8 +3,8 @@
 #include "../resources/ASCIIart.h"
 #include "../include/singleRank.h"
 
-
-Menu::Menu() : currentPage(START), totalPages(3) {
+Menu::Menu() : currentPage(START), totalPages(3)
+{
     ranking.createDummyRankingFile("../ranking/ranking.txt");
     ranking.buildListFromFile();
 } // totalPages è a 3 perchè esculdo START e GAMEOVER
@@ -13,39 +13,40 @@ Menu::Menu() : currentPage(START), totalPages(3) {
 
 bool Menu::handleInput(int key, utl::Node<SingleLevel> *&currentLevel, bool &isRunning)
 {
-    //Pagine Speciali
-    switch(currentPage){
-        case START:
-            setupGame();
-            clear();
-            printLeafArt();
-            refresh();
-            return false;
-            break;
-        case GAMEOVER:
-            return handleInputGameover(key, isRunning);
-            break;
+    // Pagine Speciali
+    switch (currentPage)
+    {
+    case START:
+        setupGame();
+        clear();
+        currentPage = HOME;
+        break;
+    case GAMEOVER:
+        return handleInputGameover(key, isRunning);
+        break;
+        return true;
     }
-    
-    //Pagine Normali
-    // la logica è che ci sono tasti che vanno per tutte le pagine del menu e altri sepcifici,
-    // quindi controllo prima se è un di quelli generali e poi se è uno di quelli specifici    
+
+    // Pagine Normali
+    //  la logica è che ci sono tasti che vanno per tutte le pagine del menu e altri sepcifici,
+    //  quindi controllo prima se è un di quelli generali e poi se è uno di quelli specifici
 
     switch (key)
     {
     case 'm':
         clear();
-        printLeafArt();
+        printLeavesArt();
         refresh();
         currentPage = HOME;
         return false;
         break;
     case 'q':
-        //lETSGOSKI
+        // lETSGOSKI
         isRunning = false;
         return false;
     case KEY_LEFT:
-        if(currentPage > totalPages) currentPage = LEVELS;
+        if (currentPage > totalPages)
+            currentPage = LEVELS;
         if (currentPage - 1 < 0)
             currentPage = static_cast<menuPage>(totalPages - 1);
         else
@@ -61,8 +62,9 @@ bool Menu::handleInput(int key, utl::Node<SingleLevel> *&currentLevel, bool &isR
             // funzione
             break;
         case LEVELS:
-            if(!handleInputLevels(key, currentLevel)){
-                currentPage=HOME;
+            if (!handleInputLevels(key, currentLevel))
+            {
+                currentPage = HOME;
                 return false;
             };
             break;
@@ -89,9 +91,12 @@ bool Menu::handleInputLevels(int key, utl::Node<SingleLevel> *&currentLevel)
         if (currentLevel->prev != NULL)
             currentLevel = currentLevel->prev;
         break;
-    case 10:  //10 = KEY_ENTER
+    case 'r':
+        currentLevel->value.stat.resetLevel();
+        break;
+    case 10: // 10 = KEY_ENTER
         clear();
-        printLeafArt(); // questo è un test
+        printLeavesArt(); // questo è un test
         refresh();
         return false;
         break;
@@ -102,27 +107,31 @@ bool Menu::handleInputLevels(int key, utl::Node<SingleLevel> *&currentLevel)
     return true;
 }
 
-void Menu::handleInputRank(int key){
-    switch(key){
-        case KEY_UP:
-            //...
-            break;
-        case KEY_DOWN:
-            //..
-            break;
-        default:
-            break;
+void Menu::handleInputRank(int key)
+{
+    switch (key)
+    {
+    case KEY_UP:
+        //...
+        break;
+    case KEY_DOWN:
+        //..
+        break;
+    default:
+        break;
     }
 }
 
-bool Menu::handleInputGameover(int key, bool &isRunning){
-    switch (key) {
+bool Menu::handleInputGameover(int key, bool &isRunning)
+{
+    switch (key)
+    {
     case 'l':
     case 10:
         currentPage = LEVELS;
         break;
     case 'q':
-        //DAVIDOSKI
+        // DAVIDOSKI
         isRunning = false;
         return false;
         break;
@@ -131,15 +140,17 @@ bool Menu::handleInputGameover(int key, bool &isRunning){
     }
     return true;
 
-    //si può aggiunger il ritenta
+    // si può aggiunger il ritenta
 }
 
-//Set Page
-void Menu::setGameoverPage(){
+// Set Page
+void Menu::setGameoverPage()
+{
     currentPage = GAMEOVER;
 }
 
-void Menu::setLevelPage(){
+void Menu::setLevelPage()
+{
     currentPage = LEVELS;
 }
 
@@ -198,21 +209,22 @@ void drawFrame(const char *instructions, menuPage currentPage)
     int instrX = (maxCols - strlen(instructions)) / 2;
     mvprintw(maxRows - 2, instrX, "%s", instructions);
 
-
     // === Titolo ===
     const int totalPages = 3;
     const char *menuPages[totalPages] = {" HOME", "LEVELS", "RANKING "};
     const char *divider = " - ";
 
-    if(currentPage == START || currentPage == GAMEOVER) return; //Non stampa il titolo
-    
+    if (currentPage == START || currentPage == GAMEOVER)
+        return; // Non stampa il titolo
+
     // Calcolo larghezza totale del menu
     int menuWidth = 0;
-    for (int i = 0; i < totalPages; i++) {
+    for (int i = 0; i < totalPages; i++)
+    {
         menuWidth += strlen(menuPages[i]);
     }
     menuWidth += (totalPages - 1) * strlen(divider);
-    int titleX = (maxCols - menuWidth) / 2; //Centra i titoli
+    int titleX = (maxCols - menuWidth) / 2; // Centra i titoli
     for (int i = 0; i < totalPages; i++)
     {
         if (static_cast<int>(currentPage) == i)
@@ -233,9 +245,12 @@ void drawFrame(const char *instructions, menuPage currentPage)
 }
 
 // Disegna un bordo rettangolare con angoli e linee
-void drawBoxBorder(int startY, int startX, int height, int width) {
-    for (int y = 0; y < height; ++y) {
-        for (int x = 0; x < width; ++x) {
+void drawBoxBorder(int startY, int startX, int height, int width)
+{
+    for (int y = 0; y < height; ++y)
+    {
+        for (int x = 0; x < width; ++x)
+        {
             int drawY = startY + y;
             int drawX = startX + x;
             if (y == 0 && x == 0)
@@ -255,28 +270,72 @@ void drawBoxBorder(int startY, int startX, int height, int width) {
 }
 
 void Menu::setupGame()
-{   
-    //Set UP -> get Nickname
-    erase();
-    printHappySnakeArt();
-    drawFrame("inserisci il nickname e premi ENTER", START);
-    int maxCol = getmaxx(stdscr);
-    int offsetY = (2 + (getmaxy(stdscr) - 5 - getHappySnakeSize())) / 2;
-    mvprintw(offsetY, (maxCol-strlen("Nickname"))/2, "Nickname: ");
-    refresh();
+{
+    int maxCol, maxRow;
+    int offsetY;
+    const int nicknameLenght = 31;
+    const char *prompt = "Nickname: ";
+    char input[nicknameLenght] = "";
+    int pos = 0;
 
-    nodelay(stdscr, FALSE);
+    nodelay(stdscr, FALSE); //attende l'input
     echo();
-    curs_set(1); //mostro il cursore
+    curs_set(1);
 
-    do{
-        getnstr(nickname, sizeof(nickname) - 1); // legge stringa con lunghezza massima
-        move(offsetY, (maxCol-strlen("Nickname"))/2 + strlen("Nickname: "));
-    } while(nickname[0] == '\0');
-    //Ripristina la Normalità
+    bool inserting = true;
+
+    while (inserting)
+    {
+        getmaxyx(stdscr, maxRow, maxCol);
+        offsetY = (2 + (maxRow - 5 - getHappySnakeSize())) / 2;
+
+        erase();
+        printVineArt();
+        printHappySnakeArt(); 
+        drawFrame("inserisci il nickname e premi ENTER", START); 
+
+        // Stampa il prompt e l’input attuale centrato orizzontalmente
+
+        int offsetX = (maxCol - strlen(prompt) - strlen(input)) / 2;
+        
+        mvprintw(offsetY, offsetX, "%s", prompt);
+        mvprintw(offsetY, offsetX + strlen(prompt), "%s", input);
+
+        // Posiziona il cursore in fondo all’input digitato
+        move(offsetY, offsetX + strlen(prompt) + pos);
+        refresh();
+
+        int ch = getch();
+
+        switch (ch){
+            case 10: //tasto ENTER
+                if(input[0] != '\0')
+                    inserting = false;  // se qualcosa è stato scritto, esce dal loop
+                break;
+            case KEY_RESIZE:
+                continue;
+                break;
+            case KEY_BACKSPACE:
+                if(pos > 0){
+                    pos --;
+                    input[pos] = '\0';
+                    mvaddch(offsetY, offsetX + strlen(prompt) + pos , ' ');
+                }
+                break;
+            default:
+                if (isprint(ch) && pos <  nicknameLenght - 1){
+                    input[pos] = ch;
+                    pos++;
+                    input[pos] = '\0';
+                }
+                
+        }
+    }
+
+    strncpy(nickname, input, nicknameLenght);
     noecho();
     nodelay(stdscr, TRUE);
-    curs_set(0); 
+    curs_set(0);
     currentPage = HOME;
 }
 
@@ -305,7 +364,7 @@ void Menu::renderCurrentPage(utl::Node<SingleLevel> *currentLevel, utl::Node<Sin
 
 void Menu::renderLevels(utl::Node<SingleLevel> *currentLevel, utl::Node<SingleLevel> *head, utl::Node<SingleLevel> *tail) const
 {
-    drawFrame("Usa [+] o [-] per muoverti, Invio o m per giocare - [<-]/[->] per cambiare pagina - [q] per chiudere e salvare", currentPage);
+    drawFrame("Usa [+] o [-] per muoverti, ENTER o [m] per giocare - [r] per resettare il livello - [<-]/[->] per cambiare pagina - [q] per chiudere e salvare", currentPage);
     int maxRows, maxCols;
     getmaxyx(stdscr, maxRows, maxCols);
 
@@ -313,8 +372,8 @@ void Menu::renderLevels(utl::Node<SingleLevel> *currentLevel, utl::Node<SingleLe
     constexpr int topMargin = 2;
     constexpr int bottomMargin = 5;
     constexpr int rightMargin = 1;
-    constexpr int leftMargin = 1;   
-    
+    constexpr int leftMargin = 1;
+
     constexpr int blockHeight = 7;
     constexpr int blockWidth = 20;
     constexpr int spacingX = 4;
@@ -337,9 +396,9 @@ void Menu::renderLevels(utl::Node<SingleLevel> *currentLevel, utl::Node<SingleLe
 
     int currentPage = 1;
     // Avanza 'head' fino alla pagina contenente il livello corrente
-    while (head != nullptr && 
-          ((currentPage - 1) * totalBlocksPerPage >= currentLevel->value.stat.id || 
-           currentPage * totalBlocksPerPage < currentLevel->value.stat.id)) 
+    while (head != nullptr &&
+           ((currentPage - 1) * totalBlocksPerPage >= currentLevel->value.stat.id ||
+            currentPage * totalBlocksPerPage < currentLevel->value.stat.id))
     {
         for (int i = 0; i < totalBlocksPerPage && head != nullptr; ++i)
             head = head->next;
@@ -349,19 +408,21 @@ void Menu::renderLevels(utl::Node<SingleLevel> *currentLevel, utl::Node<SingleLe
 
     int row = 0, col = 0;
     // Ciclo di rendering blocchi nella pagina corrente
-    while (head != nullptr && (row * (blockHeight + spacingY) + rightMargin + leftMargin + 2 * rowPadding) < usableHeight) 
+    while (head != nullptr && (row * (blockHeight + spacingY) + rightMargin + leftMargin + 2 * rowPadding) < usableHeight)
     {
         int startY = row * (blockHeight + spacingY) + (topMargin + bottomMargin) / 2 + rowPadding;
         int startX = col * (blockWidth + spacingX) + (rightMargin + leftMargin) / 2 + colPadding;
 
         // Determina il colore in base allo stato del livello
-        int colorPair = 1;
-        if (head->value.stat.timePassed <= 1)
-            colorPair = 2;
-        else if (head->value.stat.currentScore <= head->value.stat.goal)
-            colorPair = 3;
+        int colorPair = utl::GREEN;
+
+        if (head->value.stat.timePassed <= 0)
+            colorPair = utl::RED;
+        else if (head->value.stat.timePassed < currentLevel->value.stat.timeLimit)
+            colorPair = utl::YELLOW;
+
         if (currentLevel == head)
-            colorPair = 4;
+            colorPair = utl::WHITE;
 
         attron(COLOR_PAIR(colorPair));
 
@@ -373,21 +434,29 @@ void Menu::renderLevels(utl::Node<SingleLevel> *currentLevel, utl::Node<SingleLe
         attroff(A_BOLD);
 
         mvprintw(startY + 1, startX + 1, "Score: %d", head->value.stat.currentScore);
-        mvprintw(startY + 2, startX + 1, "Best:  %d", head->value.stat.bestScore);
-        mvprintw(startY + 3, startX + 1, "Goal:  %d", head->value.stat.goal);
+        if(head->value.stat.bestScore > 0){
+            mvprintw(startY + 2, startX + 1, "Best: ");
+            attron(COLOR_PAIR(utl::YELLOW) | A_BOLD);
+            mvprintw(startY + 2, startX + 7, "%d", head->value.stat.bestScore);
+            attroff(A_BOLD);
+            attron(COLOR_PAIR(colorPair));
+        }
+        else    
+            mvprintw(startY + 2, startX + 1, "Best:  %d", head->value.stat.bestScore);
+        mvprintw(startY + 3, startX + 1, "Bonus: %d", head->value.stat.endLevelBonus);
         mvprintw(startY + 4, startX + 1, "Total Time: %.2f", head->value.stat.timeLimit);
         mvprintw(startY + 5, startX + 1, "Time Left: %.2f", (head->value.stat.timeLimit - head->value.stat.timePassed));
 
         attroff(COLOR_PAIR(colorPair));
 
         // Disegna linea orizzontale tra blocchi se non ultimo colonna
-        if (head->next != nullptr && (col + 1 < blocksPerRow)) 
+        if (head->next != nullptr && (col + 1 < blocksPerRow))
         {
             int lineY = startY + blockHeight / 2;
             int lineStartX = startX + blockWidth;
             int lineEndX = lineStartX + spacingX - 1;
 
-            for (int x = lineStartX; x <= lineEndX; x++) 
+            for (int x = lineStartX; x <= lineEndX; x++)
             {
                 if ((x - lineStartX) % 2 == 0)
                     mvaddch(lineY, x, ACS_HLINE);
@@ -395,7 +464,7 @@ void Menu::renderLevels(utl::Node<SingleLevel> *currentLevel, utl::Node<SingleLe
         }
 
         // Aggiorna posizione nella griglia
-        if (++col >= blocksPerRow) 
+        if (++col >= blocksPerRow)
         {
             col = 0;
             ++row;
@@ -405,94 +474,140 @@ void Menu::renderLevels(utl::Node<SingleLevel> *currentLevel, utl::Node<SingleLe
     }
 }
 
-void Menu::renderRank() const{
-    printLeafArt();
-    drawFrame("[^]/[v] per scorrere la classifica - [<-]/[->] per cambiare pagina - [q] per chiudere e salvare", currentPage);
+void Menu::renderRank() const
+{
+    printLeavesArt();
+    drawFrame("[<-]/[->] per cambiare pagina - [q] per chiudere e salvare", currentPage);
 
-    const int boxHeigth=6, boxWidth=50, spacing=1, rankPerPage=5;
+    const int boxHeigth = 6, boxWidth = 50, spacing = 1, rankPerPage = 5;
     int maxCol, maxRow;
     getmaxyx(stdscr, maxRow, maxCol);
-    int offsetY = (maxRow - rankPerPage*boxHeigth - (rankPerPage-1)*spacing)/2, 
-    offsetX=(maxCol-boxWidth)/2;
+    int offsetY = (maxRow - rankPerPage * boxHeigth - (rankPerPage - 1) * spacing) / 2,
+        offsetX = (maxCol - boxWidth) / 2;
 
     const int rankSize = ranking.getRankSize();
 
-    for(int i=1; i<=rankSize && i<=rankPerPage; i++){
+    for (int i = 1; i <= rankSize && i <= rankPerPage; i++)
+    {
         drawBoxBorder(offsetY, offsetX, boxHeigth, boxWidth);
         SingleRank currentRank = ranking.getRankElem(i);
 
-
-        //Nickname + pos
+        // Nickname + pos
         const int size = 30;
         char string[size];
         attron(A_BOLD);
-        switch(i){
-            case 1:
-                attron(COLOR_PAIR(utl::YELLOW) | A_UNDERLINE);
-                break;
-            case 2:
-                attron(COLOR_PAIR(utl::CYAN) | A_UNDERLINE);
-                break;
-            case 3:
-                attron(COLOR_PAIR(utl::GREEN) | A_UNDERLINE);
-                break;
-            default:
-                attron(COLOR_PAIR(utl::WHITE));
-                break;
+        switch (i)
+        {
+        case 1:
+            attron(COLOR_PAIR(utl::YELLOW) | A_UNDERLINE);
+            break;
+        case 2:
+            attron(COLOR_PAIR(utl::CYAN) | A_UNDERLINE);
+            break;
+        case 3:
+            attron(COLOR_PAIR(utl::GREEN) | A_UNDERLINE);
+            break;
+        default:
+            attron(COLOR_PAIR(utl::WHITE));
+            break;
         }
         snprintf(string, size, "%d: %s", i, currentRank.getNickname());
-        mvwprintw(stdscr, offsetY+2, (maxCol-strlen(string))/2, "%s", string);
-        switch(i){
-            case 1:
-                attroff(COLOR_PAIR(utl::YELLOW) | A_UNDERLINE);
-                break;
-            case 2:
-                attroff(COLOR_PAIR(utl::CYAN) | A_UNDERLINE);
-                break;
-            case 3:
-                attroff(COLOR_PAIR(utl::GREEN) | A_UNDERLINE);
-                break;
-            default:
-                attroff(COLOR_PAIR(utl::WHITE) | A_UNDERLINE);
-                break;
-            
+        mvwprintw(stdscr, offsetY + 2, (maxCol - strlen(string)) / 2, "%s", string);
+        switch (i)
+        {
+        case 1:
+            attroff(COLOR_PAIR(utl::YELLOW) | A_UNDERLINE);
+            break;
+        case 2:
+            attroff(COLOR_PAIR(utl::CYAN) | A_UNDERLINE);
+            break;
+        case 3:
+            attroff(COLOR_PAIR(utl::GREEN) | A_UNDERLINE);
+            break;
+        default:
+            attroff(COLOR_PAIR(utl::WHITE) | A_UNDERLINE);
+            break;
         }
         attroff(A_BOLD);
 
-        //Total score
+        // Total score
         snprintf(string, size, "Total score: %ld", currentRank.getBestTotScore());
-        mvwprintw(stdscr, offsetY+3, (maxCol-strlen(string))/2, "%s", string);
+        mvwprintw(stdscr, offsetY + 3, (maxCol - strlen(string)) / 2, "%s", string);
         offsetY += boxHeigth + spacing;
     }
 }
 
-void Menu::renderGameover() const{
+void Menu::renderGameover() const
+{
     drawFrame("Usa [l] o premi ENTER per tornare alla selezione dei livelli - [q] per chiudere e salvare", GAMEOVER);
     printStunnedSnakeArt();
     printGameoverArt();
 }
 
-void Menu::renderHome() const{
+void Menu::renderHome() const
+{
+    printVineArt();
     drawFrame("[<-]/[->] per cambiare pagina - [q] per chiudere e salvare", currentPage);
     int maxRow, maxCol;
     getmaxyx(stdscr, maxRow, maxCol);
     const char *instructions;
-    const int sugegstedValueBottom = 50, sugegstedValueTop=70;
-    
-    if(maxRow > sugegstedValueTop){
-        instructions = "Si consigli di ingrandire la pagina, utlizzando CTRL + [+]"; 
+    const int sugegstedValueBottom = 50, sugegstedValueTop = 60;
+
+    if (maxRow > sugegstedValueTop)
+    {
+        instructions = "Si consiglia di ingrandire la pagina, utilizzando CTRL + [+]";
         attron(COLOR_PAIR(utl::WHITE) | A_BOLD);
-        mvprintw(maxRow/2, (maxCol-strlen(instructions))/2, "%s", instructions);
+        mvprintw(maxRow / 2, (maxCol - strlen(instructions)) / 2, "%s", instructions);
         attroff(COLOR_PAIR(utl::WHITE) | A_BOLD);
     }
-    else if(maxRow < sugegstedValueBottom){
-        instructions = "Si consigli di rimpicciolire la pagina, utlizzando CTRL + [-]"; 
+    else if (maxRow < sugegstedValueBottom)
+    {
+        instructions = "Si consiglia di rimpicciolire la pagina, utilizzando CTRL + [-]";
         attron(COLOR_PAIR(utl::WHITE) | A_BOLD);
-        mvprintw(maxRow/2, (maxCol-strlen(instructions))/2, "%s", instructions);
+        mvprintw(maxRow / 2, (maxCol - strlen(instructions)) / 2, "%s", instructions);
         attroff(COLOR_PAIR(utl::WHITE) | A_BOLD);
     }
-    else {
+    else
+    {
         printSnakeHomeArt();
+        char currentPlayer[50]; //50 è un valre safe perchè abbastanzapiù garnde della lunghezza del nome massima
+        snprintf(currentPlayer, 50, "Current Player: %s", nickname);
+
+        //current player
+        attron(COLOR_PAIR(utl::WHITE) | A_BOLD);
+        mvprintw(maxRow/2, (maxCol- strlen(currentPlayer))/2, "Current Player: ");
+        attron(COLOR_PAIR(utl::YELLOW) | A_BOLD);
+        mvprintw(maxRow/2, (maxCol- strlen(currentPlayer))/2 + strlen("Current Player: "), "%s", nickname);
+        attroff(COLOR_PAIR(utl::YELLOW) | A_BOLD);
+
+        //piccola animazione per i credits
+        const char *creditText = ">>> Davide Gamberini <<<          >>> Mattia Graziani <<<          >>> Samuele Grillini <<<          ";
+        const int height = 3, width = 61;
+        const int offsetX = (maxCol - width) / 2;
+        const int offsetY = (maxRow - height) / 2 + getHomeSnakeSize()-4;
+        const int innerWidth = width - 2; // esclusi i botdi
+
+        drawBoxBorder(offsetY, offsetX, height, width);
+
+        int textLen = strlen(creditText);
+        int y = offsetY + height / 2;
+        int delayMs = 100;
+
+        static int offset = 0;
+        mvhline(y, offsetX + 1, ' ', innerWidth); //mvhline stampa lo stesso carattere (passato come parametro) per tutta la riga
+
+        // Disegna solo la parte del testo visibile nel box
+        for (int i = 0; i < innerWidth; ++i)
+        {
+            int textPos = (offset + i) % textLen;
+            if(creditText[textPos] != ' ' and creditText[textPos] != '<' and creditText[textPos]!= '>') attron(COLOR_PAIR(utl::CYAN) | A_BOLD);
+            mvaddch(y, offsetX + 1 + i, creditText[textPos]);   
+            attroff(COLOR_PAIR(utl::CYAN) | A_BOLD);
+        }
+        offset = (offset + 1) % textLen;
+        
+        napms(delayMs); //attende tot MS
     }
 }
+
 // GG Davidoski

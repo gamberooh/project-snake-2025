@@ -12,6 +12,7 @@ class Food {
         int scoreValue;
 
         void setPosition(const Snake &snake, Arena &arena);
+        void setValue(const int value);
         bool update(const Snake &snake, Arena &arena);
 };
 

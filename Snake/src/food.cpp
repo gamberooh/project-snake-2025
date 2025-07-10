@@ -17,6 +17,10 @@ void Food::setPosition(const Snake &snake, Arena &arena) {
     arena.arena[spawnPos.y][spawnPos.x] = true;
 }
 
+void Food::setValue(const int value){
+    this->scoreValue = value;
+}
+
 bool Food::update(const Snake &snake, Arena &arena) {
     if(snake.body.head->value == spawnPos) {
         setPosition(snake, arena);

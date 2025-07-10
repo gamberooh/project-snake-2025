@@ -37,6 +37,8 @@ CMakeFiles/Snake.dir/src/arena.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/unctrl.h /usr/include/curses.h \
  /home/gr8llo/Documents/project-snake-2025/Snake/src/../include/utility.h \
+ /home/gr8llo/Documents/project-snake-2025/Snake/src/../resources/ASCIIart.h \
+ /home/gr8llo/Documents/project-snake-2025/Snake/src/../resources/../include/utility.h \
  /usr/include/c++/13/cstring \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

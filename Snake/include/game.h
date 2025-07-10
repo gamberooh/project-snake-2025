@@ -19,7 +19,7 @@ class Game {
         const int nLevels; 
         utl::Node<SingleLevel>* currentLevel;
         utl::DoubleLinkedList<SingleLevel> levelList;
-
+    
         void processInput();
         void update(double updateTime);
         void render() const;

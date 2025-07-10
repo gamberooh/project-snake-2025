@@ -30,6 +30,7 @@ class Menu {
         const int totalPages;
         menuPage currentPage;
         Ranking ranking;
+
         //Setup
         void setupGame();
         //Levels
@@ -44,8 +45,7 @@ class Menu {
         void handleInputRank(int key);
         void renderRank() const;
 
-         
-        //Uguale per le altre (le funzioni di render devono essere const)
+
 };
 
 
