@@ -5,7 +5,6 @@
 
 Menu::Menu() : currentPage(START), totalPages(3)
 {
-    ranking.createDummyRankingFile("../ranking/ranking.txt");
     ranking.buildListFromFile();
 } // totalPages è a 3 perchè esculdo START e GAMEOVER
 
@@ -42,6 +41,7 @@ bool Menu::handleInput(int key, utl::Node<SingleLevel> *&currentLevel, bool &isR
         break;
     case 'q':
         // lETSGOSKI
+        ranking.writeRankingFile();
         isRunning = false;
         return false;
     case KEY_LEFT:
@@ -69,7 +69,6 @@ bool Menu::handleInput(int key, utl::Node<SingleLevel> *&currentLevel, bool &isR
             };
             break;
         case RANKING:
-            handleInputRank(key);
             break;
         default:
             break;
@@ -93,6 +92,7 @@ bool Menu::handleInputLevels(int key, utl::Node<SingleLevel> *&currentLevel)
         break;
     case 'r':
         currentLevel->value.stat.resetLevel();
+        currentLevel->value.snake.reset(currentLevel->value.arena, currentLevel->value.stat.snakeSpeed);
         break;
     case 10: // 10 = KEY_ENTER
         clear();
@@ -105,21 +105,6 @@ bool Menu::handleInputLevels(int key, utl::Node<SingleLevel> *&currentLevel)
     }
 
     return true;
-}
-
-void Menu::handleInputRank(int key)
-{
-    switch (key)
-    {
-    case KEY_UP:
-        //...
-        break;
-    case KEY_DOWN:
-        //..
-        break;
-    default:
-        break;
-    }
 }
 
 bool Menu::handleInputGameover(int key, bool &isRunning)
@@ -153,6 +138,11 @@ void Menu::setLevelPage()
 {
     currentPage = LEVELS;
 }
+
+void Menu::updateRank(utl::Node<SingleLevel>* head) {
+    ranking.updateRank(head);
+}
+
 
 // Render
 
@@ -333,9 +323,13 @@ void Menu::setupGame()
     }
 
     strncpy(nickname, input, nicknameLenght);
+
     noecho();
     nodelay(stdscr, TRUE);
     curs_set(0);
+
+    //inserting player in the ranking
+    ranking.insertPlayer(nickname);
     currentPage = HOME;
 }
 
@@ -474,68 +468,76 @@ void Menu::renderLevels(utl::Node<SingleLevel> *currentLevel, utl::Node<SingleLe
     }
 }
 
-void Menu::renderRank() const
-{
+void Menu::renderRank() const {
     printLeavesArt();
     drawFrame("[<-]/[->] per cambiare pagina - [q] per chiudere e salvare", currentPage);
 
-    const int boxHeigth = 6, boxWidth = 50, spacing = 1, rankPerPage = 5;
+    const int boxHeigth=6, boxWidth=50, spacing=1, rankPerPage=5;
     int maxCol, maxRow;
     getmaxyx(stdscr, maxRow, maxCol);
-    int offsetY = (maxRow - rankPerPage * boxHeigth - (rankPerPage - 1) * spacing) / 2,
-        offsetX = (maxCol - boxWidth) / 2;
+    int offsetY = (maxRow - rankPerPage*boxHeigth - (rankPerPage-1)*spacing)/2, 
+    offsetX=(maxCol-boxWidth)/2;
+    utl::Node<SingleRank>* tailRank = ranking.getTailRankPointer();
 
-    const int rankSize = ranking.getRankSize();
+    int position = 1;
+    utl::Node<SingleRank>* headRank = ranking.getHeadRankPointer();
 
-    for (int i = 1; i <= rankSize && i <= rankPerPage; i++)
-    {
+    while (headRank != NULL && position <= rankPerPage) {
         drawBoxBorder(offsetY, offsetX, boxHeigth, boxWidth);
-        SingleRank currentRank = ranking.getRankElem(i);
-
-        // Nickname + pos
         const int size = 30;
         char string[size];
         attron(A_BOLD);
-        switch (i)
-        {
-        case 1:
-            attron(COLOR_PAIR(utl::YELLOW) | A_UNDERLINE);
-            break;
-        case 2:
-            attron(COLOR_PAIR(utl::CYAN) | A_UNDERLINE);
-            break;
-        case 3:
-            attron(COLOR_PAIR(utl::GREEN) | A_UNDERLINE);
-            break;
-        default:
-            attron(COLOR_PAIR(utl::WHITE));
-            break;
+        switch(position){
+            case 1:
+                attron(COLOR_PAIR(utl::YELLOW) | A_UNDERLINE);
+                break;
+            case 2:
+                attron(COLOR_PAIR(utl::CYAN) | A_UNDERLINE);
+                break;
+            case 3:
+                attron(COLOR_PAIR(utl::GREEN) | A_UNDERLINE);
+                break;
+            default:
+                attron(COLOR_PAIR(utl::WHITE));
+                break;
         }
-        snprintf(string, size, "%d: %s", i, currentRank.getNickname());
-        mvwprintw(stdscr, offsetY + 2, (maxCol - strlen(string)) / 2, "%s", string);
-        switch (i)
-        {
-        case 1:
-            attroff(COLOR_PAIR(utl::YELLOW) | A_UNDERLINE);
-            break;
-        case 2:
-            attroff(COLOR_PAIR(utl::CYAN) | A_UNDERLINE);
-            break;
-        case 3:
-            attroff(COLOR_PAIR(utl::GREEN) | A_UNDERLINE);
-            break;
-        default:
-            attroff(COLOR_PAIR(utl::WHITE) | A_UNDERLINE);
-            break;
+        snprintf(string, size, "%d: %s", position, headRank -> value.getNickname());
+        mvwprintw(stdscr, offsetY+2, (maxCol-strlen(string))/2, "%s", string);
+        switch(position){
+            case 1:
+                attroff(COLOR_PAIR(utl::YELLOW) | A_UNDERLINE);
+                break;
+            case 2:
+                attroff(COLOR_PAIR(utl::CYAN) | A_UNDERLINE);
+                break;
+            case 3:
+                attroff(COLOR_PAIR(utl::GREEN) | A_UNDERLINE);
+                break;
+            default:
+                attroff(COLOR_PAIR(utl::WHITE) | A_UNDERLINE);
+                break;
         }
-        attroff(A_BOLD);
-
-        // Total score
-        snprintf(string, size, "Total score: %ld", currentRank.getBestTotScore());
-        mvwprintw(stdscr, offsetY + 3, (maxCol - strlen(string)) / 2, "%s", string);
+        //Total score
+        snprintf(string, size, "Total score: %ld", headRank -> value.getBestTotScore());
+        mvwprintw(stdscr, offsetY+3, (maxCol-strlen(string))/2, "%s", string);
         offsetY += boxHeigth + spacing;
+        attroff(A_BOLD);
+        headRank = headRank -> next;
+        position++;
+    }
+    if (strcmp(tailRank -> value.getNickname(), nickname) == 0){
+        long int scoreToReach = tailRank -> prev -> value.getBestTotScore();
+        long playerScore = tailRank -> value.getBestTotScore();
+        scoreToReach -= playerScore;
+        const int size = 100;
+        char msg[size];
+        attron(COLOR_PAIR(utl::RED)| A_BLINK | A_UNDERLINE | A_BOLD);
+        snprintf(msg, size, "Punti mancanti alla TOP %d: %ld", MAX_RANK, scoreToReach);
+        mvwprintw(stdscr, offsetY+3, (maxCol-strlen(msg))/2, "%s", msg);
+        attroff(COLOR_PAIR(utl::RED)| A_BLINK | A_UNDERLINE | A_BOLD);
     }
 }
+
 
 void Menu::renderGameover() const
 {

@@ -24,6 +24,7 @@ class Menu {
         void renderCurrentPage(utl::Node<SingleLevel>* currentLevel, utl::Node<SingleLevel>* head, utl::Node<SingleLevel>* tail) const;
         void setGameoverPage();
         void setLevelPage();
+        void updateRank(utl::Node<SingleLevel>* head);
         char nickname[31];
 
     private:
@@ -42,7 +43,6 @@ class Menu {
 
         void renderHome() const;
 
-        void handleInputRank(int key);
         void renderRank() const;
 
 

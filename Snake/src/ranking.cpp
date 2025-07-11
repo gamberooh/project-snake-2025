@@ -1,91 +1,94 @@
-//
-// Created by gamberooh on 25/02/25.
-//
-
 #include "../include/ranking.h"
+#include <iostream>
+
+Ranking::Ranking() : currentPlayer(NULL){}
+
 
 void Ranking::fixRank() {
-
-    if (ranking.tail == NULL || ranking.tail->prev == NULL) {
-        if (ranking.head !=  NULL) {
-            ranking.head->value.setPos(1);
-        }
+    if (ranking.head == NULL || ranking.size <= 1) {
+        //inutile ordinare
         return;
-     }
-
-    utl::Node<SingleRank> *current = ranking.tail;
-    //devo controllare sempre current->prev per come ho strutturato
-    //l'inserimento al contrario in insert
-    while (current != NULL && current->prev !=NULL && current->value.getBestTotScore() > current->prev->value.getBestTotScore()) {
-        utl::Node<SingleRank> *prev = current->prev;
-        //salvo gli adiacenti
-        utl::Node<SingleRank> *nextOfCurrent = current->next;
-        utl::Node<SingleRank> *prevOfPrev = prev->prev;
-
-        //collego invertendo i nodi da intercambiare
-        current->next = prev;
-        prev->prev = current;
-
-        //ripristino l'ordine della lista
-        current->prev = prevOfPrev;
-        if (prevOfPrev != NULL) {
-            prevOfPrev->next = current;
-        } else {
-            ranking.head = current;
+    }
+    bool swapped;
+    utl::Node<SingleRank> *lastSorted = NULL; //ottimizzazione
+    do {
+        utl::Node<SingleRank> *current = ranking.head;
+        swapped = false;
+        while (current->next != lastSorted) {
+            if (current->value.getBestTotScore() < current->next->value.getBestTotScore()) {
+                utl::Node<SingleRank> *big = current->next;
+                utl::Node<SingleRank> *min = current;
+                // Collego gli adiacenti
+                if (min->prev != NULL) {
+                    min->prev->next = big;
+                } else {
+                    ranking.head = big;
+                }
+                if (big->next != NULL) {
+                    big->next->prev = min;
+                } else {
+                    ranking.tail = min;
+                }
+                // Completo lo swap
+                min->next = big->next;
+                big->prev = min->prev;
+                big->next = min;
+                min->prev = big;
+                current = big;
+                swapped = true;
+            } else {
+                current = current->next;
+               }
         }
-
-        prev->next = nextOfCurrent;
-        if (nextOfCurrent != NULL) {
-            nextOfCurrent->prev = prev;
-        } else {
-            ranking.tail = prev;
-        }
-
-        int oldCurrPos = current->value.getPos();
-        int oldPrevPos = prev->value.getPos();
-
-        current->value.setPos(oldPrevPos);
-        prev->value.setPos(oldCurrPos);
+        lastSorted = current;
+    } while(swapped);
+    //assegnazione delle posizione ordinate
+    int pos = 1;
+    utl::Node<SingleRank> *current = ranking.head;
+    while (current != NULL) {
+        current->value.setPos(pos);
+        current = current->next;
     }
 }
 
-Ranking::Ranking() = default;
-
-//gestione della struttura dati
-void Ranking::insert(SingleRank elem) {
-    if (ranking.head == NULL || ranking.size < MAX_RANK) {
-        ranking.newNodeAtTheEnd();
-        ranking.tail->value.setNickname(elem.getNickname());
-        ranking.tail->value.setPos(elem.getPos());
-        ranking.tail->value.setBestTotScore(elem.getBestTotScore());
-        fixRank();
-        std::cout << "Elemento Inserito e posizionato correttamente in classifica";
-        return;
-    }
-
-    if (ranking.size == MAX_RANK) {
-        if (elem.getBestTotScore() < ranking.tail->value.getBestTotScore()) {
-            std::cout << "Il giocatore non entra in classifica";
-            return;
-        } else {
-            utl::Node<SingleRank> *toDel = ranking.tail;
-            if (ranking.tail->prev != NULL) {
-                ranking.tail = ranking.tail->prev;
-                ranking.tail->next = NULL;
-            } else {
-                ranking.head = NULL;
-                ranking.tail = NULL;
-            }
-            delete toDel;
-            ranking.size--;
-            ranking.newNodeAtTheEnd();
-            ranking.tail->value.setNickname(elem.getNickname());
-            ranking.tail->value.setPos(elem.getPos());
-            ranking.tail->value.setBestTotScore(elem.getBestTotScore());
-            fixRank();
-            ranking.size++;
+void Ranking::insertPlayer(char* nickname) {
+    utl::Node<SingleRank> *p = ranking.head;
+    bool toIns = true;
+    while (p!=NULL and toIns) {
+        if (strcmp(p->value.getNickname(), nickname) == 0) {
+            currentPlayer = p;
+            toIns = false;
         }
+        p = p->next;
     }
+    if (toIns) {
+        ranking.newNodeAtTheEnd();
+        ranking.tail->value.setNickname(nickname);
+        ranking.tail->value.setPos(getRankSize()+1);
+        ranking.tail->value.setBestTotScore(0);
+        currentPlayer = ranking.tail;
+    }
+}
+long getPlayerScore(utl::Node<SingleLevel> *head){
+    long playerScore = 0;
+    utl::Node<SingleLevel> *p = head;
+    while (p != NULL) {
+        playerScore += p->value.stat.bestScore;
+        p = p->next;
+    }
+    return playerScore;
+}
+
+void Ranking::updateRank(utl::Node<SingleLevel> *head) {
+    currentPlayer -> value.setBestTotScore(getPlayerScore(head));
+    fixRank();
+}
+
+void Ranking::loadPlayer(SingleRank elem) {
+    ranking.newNodeAtTheEnd();
+    ranking.tail->value.setNickname(elem.getNickname());
+    ranking.tail->value.setPos(elem.getPos());
+    ranking.tail->value.setBestTotScore(elem.getBestTotScore());
 }
 
 //ogni volta volta che il gioco termina viene riscritta in caso la classifica
@@ -161,6 +164,17 @@ SingleRank Ranking::getRankElem (int searchPos) const {
     return searched;
 }
 
+SingleRank Ranking::getTail() const {
+    return ranking.tail->value;
+}
+
+utl::Node<SingleRank>* Ranking::getHeadRankPointer() const {
+    return ranking.head;
+}
+utl::Node<SingleRank>* Ranking::getTailRankPointer() const {
+    return ranking.tail;
+}
+
 void Ranking::buildListFromFile(){
     //pulisco la lista
     utl::Node<SingleRank> *p = ranking.head;
@@ -188,7 +202,7 @@ void Ranking::buildListFromFile(){
             if (rankingFile.getline(nickname, MAX_NICKNAME, ',')) {
                 if (rankingFile >> bestScore) {
                     SingleRank elem = SingleRank(pos, nickname, bestScore);
-                    insert(elem);
+                    loadPlayer(elem);
 
                 } else {
                     std::cerr << "Errore nel leggere bestScore! Pulisco lo stream. " << std::endl;
@@ -213,25 +227,4 @@ void Ranking::buildListFromFile(){
 
 int Ranking::getRankSize() const{
     return ranking.size;
-}
-
-// Helper per creare un file di ranking di esempio per i test
-void Ranking::createDummyRankingFile(const char* filename) {
-    // Tenta di rimuovere il file esistente per un test pulito
-    if (std::remove(filename) == 0) {
-        //std::cout << "File di test precedente '" << filename << "' rimosso." << std::endl;
-    }
-
-    std::ofstream outFile(filename);
-    if (!outFile.is_open()) {
-        //std::cerr << "ERRORE: Impossibile creare il file di test: " << filename << std::endl;
-        return;
-    }
-    outFile << "1,Charlie,1200\n";
-    outFile << "2,Alice,1000\n";
-    outFile << "3,David Spacey,900\n";
-    outFile << "4,Bob,800\n";
-    outFile << "5,Eve,700\n"; // 5 elementi per testare MAX_RANK
-    outFile.close();
-    //std::cout << "File di ranking di test creato: " << filename << std::endl;
 }

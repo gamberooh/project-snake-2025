@@ -13,6 +13,7 @@ class Snake{
         void initializeSnake(int speed, Arena &arena);
         void changeDirection(int x, int y);
         bool update(double updateTime, Arena &arena);
+        void reset(Arena &arena, const int speed);
 
     private:
         int characterPerSecond;

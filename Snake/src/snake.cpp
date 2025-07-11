@@ -16,10 +16,28 @@ void Snake::setSpawnPos(Arena &arena) {
 }
 
 void Snake::initializeSnake(const int speed, Arena &arena) {
-    //da rivedere il punto di spawn
     setSpawnPos(arena);
     characterPerSecond = speed;
+}
 
+void Snake::reset(Arena &arena, const int speed){
+    utl::Node<utl::Position>* tmp = body.head;
+    utl::Node<utl::Position>* del = body.head;
+
+    while(tmp != NULL){
+        arena.arena[tmp->value.y][tmp->value.x] = false;
+        del = tmp;
+        tmp=tmp->next;
+        delete del;
+    }
+    
+    body.size = 0;
+    body.head = NULL;
+    body.tail = body.head;
+    initializeSnake(speed, arena);
+    direction = utl::Position(-1, 0);
+    enableDirectionChange = true;
+    firstMovement = false;
 }
 
 void Snake::changeDirection(int x, int y) {

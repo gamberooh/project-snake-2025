@@ -1180,9 +1180,13 @@ CMakeFiles/Snake.dir/src/menu.cpp.o: /home/gr8llo/Documents/project-snake-2025/S
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 CMakeFiles/Snake.dir/src/ranking.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/ranking.cpp \
+  /home/gr8llo/Documents/project-snake-2025/Snake/include/arena.h \
+  /home/gr8llo/Documents/project-snake-2025/Snake/include/food.h \
   /home/gr8llo/Documents/project-snake-2025/Snake/include/log.h \
   /home/gr8llo/Documents/project-snake-2025/Snake/include/ranking.h \
+  /home/gr8llo/Documents/project-snake-2025/Snake/include/singleLevel.h \
   /home/gr8llo/Documents/project-snake-2025/Snake/include/singleRank.h \
+  /home/gr8llo/Documents/project-snake-2025/Snake/include/snake.h \
   /home/gr8llo/Documents/project-snake-2025/Snake/include/utility.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -1288,20 +1292,24 @@ CMakeFiles/Snake.dir/src/ranking.cpp.o: /home/gr8llo/Documents/project-snake-202
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
   /usr/include/ctype.h \
+  /usr/include/curses.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
+  /usr/include/ncurses_dll.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/include/time.h \
+  /usr/include/unctrl.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
@@ -1323,6 +1331,8 @@ CMakeFiles/Snake.dir/src/ranking.cpp.o: /home/gr8llo/Documents/project-snake-202
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
@@ -1384,7 +1394,8 @@ CMakeFiles/Snake.dir/src/ranking.cpp.o: /home/gr8llo/Documents/project-snake-202
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 CMakeFiles/Snake.dir/src/singleLevel.cpp.o: /home/gr8llo/Documents/project-snake-2025/Snake/src/singleLevel.cpp \
   /home/gr8llo/Documents/project-snake-2025/Snake/include/arena.h \

@@ -70,9 +70,11 @@ void Game::processInput() {
                 break;
             case 'm':
                 openMenu = true;
+                menu.updateRank(levelList.head);
                 break;
             case 'l':
                 openMenu = true;
+                menu.updateRank(levelList.head);
                 menu.setLevelPage();
             case KEY_RESIZE:
                 if(!openMenu) arena.fixPos();
@@ -95,6 +97,7 @@ void Game::update(const double updateTime) {
         if(!snake.firstMovement) return; //se non si è ancora mosso il serpente stoppo la funzione
         if(!snake.update(updateTime, arena)){ // = a lo snake si è mangiato con se stesso
             openMenu = true;
+            menu.updateRank(levelList.head);
             menu.setGameoverPage();
             //altre cose game over
         };  
@@ -103,6 +106,7 @@ void Game::update(const double updateTime) {
         //end level
         if(!currentLevel->value.updateLevelStat(updateTime)){
             openMenu = true;
+            menu.updateRank(levelList.head);
             menu.setLevelPage();
             //altre cose di fine livello
         }
