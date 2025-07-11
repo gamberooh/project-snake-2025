@@ -69,11 +69,14 @@ void Game::processInput() {
                 break;
             case 'm':
                 openMenu = true;
+                //
                 menu.updateRank(levelList.head);
+                log.updateLine(menu.nickname, currentLevel->value.stat.id, currentLevel->value.stat.currentScore, currentLevel->value.stat.bestScore, currentLevel->value.stat.timePassed);
                 break;
             case 'l':
                 openMenu = true;
                 menu.updateRank(levelList.head);
+                log.updateLine(menu.nickname, currentLevel->value.stat.id, currentLevel->value.stat.currentScore, currentLevel->value.stat.bestScore, currentLevel->value.stat.timePassed);
                 menu.setLevelPage();
             case KEY_RESIZE:
                 if(!openMenu) arena.fixPos();
@@ -97,6 +100,7 @@ void Game::update(const double updateTime) {
         if(!snake.update(updateTime, arena)){ // = a lo snake si è mangiato con se stesso
             openMenu = true;
             menu.updateRank(levelList.head);
+            log.updateLine(menu.nickname, currentLevel->value.stat.id, currentLevel->value.stat.currentScore, currentLevel->value.stat.bestScore, currentLevel->value.stat.timePassed);
             menu.setGameoverPage();
             //altre cose game over
         };  
@@ -106,6 +110,7 @@ void Game::update(const double updateTime) {
         if(!currentLevel->value.updateLevelStat(updateTime)){
             openMenu = true;
             menu.updateRank(levelList.head);
+            log.updateLine(menu.nickname, currentLevel->value.stat.id, currentLevel->value.stat.currentScore, currentLevel->value.stat.bestScore, currentLevel->value.stat.timePassed);
             menu.setLevelPage();
             //altre cose di fine livello
         }

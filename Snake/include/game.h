@@ -5,6 +5,7 @@
 #include "singleLevel.h"
 #include "utility.h"
 #include "menu.h"
+#include "log.h"
 
 class Game {
     public:
@@ -15,6 +16,7 @@ class Game {
         bool isRunning;
         bool openMenu;
         Menu menu;
+        Log log;
         const int fps;
         const int nLevels; 
         utl::Node<SingleLevel>* currentLevel;

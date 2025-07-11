@@ -329,8 +329,13 @@ void Menu::setupGame(utl::Node<SingleLevel>* head)  //head e currenteLevel all'i
     curs_set(0);
 
     //load game se esiste
+    log.buildFilePath(nickname);
     if(log.exists(nickname))
+        //carico dati dai log corrispondenti al nick
         log.loadGame(nickname, head);
+    else
+        // creo log con dati di default
+        log.createLog(nickname, head);
 
     //inserting player in the ranking
     ranking.insertPlayer(nickname);
