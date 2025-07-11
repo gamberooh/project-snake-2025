@@ -22,7 +22,8 @@ public:
     //gestione della struttura dati
     void updateRank(utl::Node<SingleLevel> *head);
     void writeRankingFile();
-    SingleRank getRankElem (int searchPos) const;
+
+    bool playerNotInRank() const;
     SingleRank getTail() const;
 
     utl::Node<SingleRank>* getHeadRankPointer() const;

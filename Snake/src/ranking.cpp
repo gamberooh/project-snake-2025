@@ -35,6 +35,10 @@ void Ranking::fixRank() {
                 big->next = min;
                 min->prev = big;
                 current = big;
+                int bigPos = big->value.getPos();
+                int minPos = min->value.getPos();
+                big->value.setPos(minPos);
+                min->value.setPos(bigPos);
                 swapped = true;
             } else {
                 current = current->next;
@@ -42,13 +46,14 @@ void Ranking::fixRank() {
         }
         lastSorted = current;
     } while(swapped);
-    //assegnazione delle posizione ordinate
-    int pos = 1;
-    utl::Node<SingleRank> *current = ranking.head;
-    while (current != NULL) {
-        current->value.setPos(pos);
-        current = current->next;
-    }
+    //assegnazione delle posizione ordinatepos++;
+    // int pos = 1;
+    // utl::Node<SingleRank> *current = ranking.head;
+    // while (current != NULL) {
+    //     pos++;
+    //     current->value.setPos(pos);
+    //     current = current->next;
+    // }
 }
 
 void Ranking::insertPlayer(char* nickname) {
@@ -64,7 +69,7 @@ void Ranking::insertPlayer(char* nickname) {
     if (toIns) {
         ranking.newNodeAtTheEnd();
         ranking.tail->value.setNickname(nickname);
-        ranking.tail->value.setPos(getRankSize()+1);
+        ranking.tail->value.setPos(getRankSize());
         ranking.tail->value.setBestTotScore(0);
         currentPlayer = ranking.tail;
     }
@@ -91,6 +96,11 @@ void Ranking::loadPlayer(SingleRank elem) {
     ranking.tail->value.setBestTotScore(elem.getBestTotScore());
 }
 
+bool Ranking::playerNotInRank() const {
+     return currentPlayer->value.getPos() > MAX_RANK ;
+}
+
+
 //ogni volta volta che il gioco termina viene riscritta in caso la classifica
 //in base a cio' che e' presente nella lista
 void Ranking::writeRankingFile() {
@@ -112,56 +122,6 @@ void Ranking::writeRankingFile() {
         rankingFile << "\n";
         p = p->next;
     }
-}
-
-SingleRank Ranking::getRankElem (int searchPos) const {
-    char filepath[MAX_PATH];
-    strcpy(filepath, "../ranking/ranking.txt");
-    std::ifstream rankingFile(filepath);
-
-    if (!rankingFile.is_open()) {
-        //std::cerr << "Impossibile aprire il file";
-    }
-
-    SingleRank searched = SingleRank();
-    int pos = 0;
-    char commaCheck1 = '\0';
-    char nickname [MAX_NICKNAME];
-    long bestScore = 0;
-
-    while (rankingFile >> pos) {
-        if (rankingFile >> commaCheck1 && commaCheck1 == ',') {
-            if (rankingFile.getline(nickname, MAX_NICKNAME, ',')) {
-                if (rankingFile >> bestScore) {
-                    if (pos == searchPos) {
-                        searched.setPos(pos);
-                        searched.setNickname(nickname);
-                        searched.setBestTotScore(bestScore);
-                        return searched;
-                    }
-                } else {
-                    //std::cerr << "Errore nel leggere bestScore! Pulisco lo stream. " << std::endl;
-                    rankingFile.clear();
-                }
-            } else {
-                //std::cerr << "Errore nel leggere nickname! Pulisco lo stream." << std::endl;
-                rankingFile.clear();
-            }
-        } else {
-            //std::cerr << "Errore la virgola! Pulisco lo stream." << std::endl;
-            rankingFile.clear();
-        }
-        char ch;
-        while (rankingFile.get(ch) && ch != '\n'){
-            //se per caso ci fossero stati errori in inserimento
-            //verrebbero bypassati da questo ciclo che fa arrivare
-            //alla fine della linea
-        }
-    }
-
-    //non trovato il livello
-    rankingFile.close();
-    return searched;
 }
 
 SingleRank Ranking::getTail() const {

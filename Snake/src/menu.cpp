@@ -525,7 +525,7 @@ void Menu::renderRank() const {
         headRank = headRank -> next;
         position++;
     }
-    if (strcmp(tailRank -> value.getNickname(), nickname) == 0){
+    if (ranking.playerNotInRank()){
         long int scoreToReach = tailRank -> prev -> value.getBestTotScore();
         long playerScore = tailRank -> value.getBestTotScore();
         scoreToReach -= playerScore;
