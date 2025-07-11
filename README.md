@@ -59,7 +59,7 @@
     g++ ../main.cpp ../src/*.cpp ../resources/ASCIIart.cpp -lncurses -o Snake
     ```
 
-5.. **Avvia il gioco (compatibile con entrambe le versioni di compilazione):**  
+5.  **Avvia il gioco (compatibile con entrambe le versioni di compilazione):**  
      Dalla cartella build
    ```sh
    ./Snake
