@@ -5,6 +5,7 @@
 #include "utility.h"
 #include "singleLevel.h"
 #include "ranking.h"
+#include "log.h"
 
 enum menuPage{
     HOME,
@@ -31,9 +32,10 @@ class Menu {
         const int totalPages;
         menuPage currentPage;
         Ranking ranking;
+        Log log; 
 
         //Setup
-        void setupGame();
+        void setupGame(utl::Node<SingleLevel>* head);
         //Levels
         bool handleInputLevels(int key, utl::Node<SingleLevel>* &currentLevel);
         void renderLevels(utl::Node<SingleLevel>* currentLevel, utl::Node<SingleLevel>* head, utl::Node<SingleLevel>* tail) const;

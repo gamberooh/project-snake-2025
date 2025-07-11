@@ -16,7 +16,7 @@ bool Menu::handleInput(int key, utl::Node<SingleLevel> *&currentLevel, bool &isR
     switch (currentPage)
     {
     case START:
-        setupGame();
+        setupGame(currentLevel);
         clear();
         currentPage = HOME;
         break;
@@ -259,7 +259,7 @@ void drawBoxBorder(int startY, int startX, int height, int width)
     }
 }
 
-void Menu::setupGame()
+void Menu::setupGame(utl::Node<SingleLevel>* head)  //head e currenteLevel all'inizio sono uguali
 {
     int maxCol, maxRow;
     int offsetY;
@@ -327,6 +327,10 @@ void Menu::setupGame()
     noecho();
     nodelay(stdscr, TRUE);
     curs_set(0);
+
+    //load game se esiste
+    if(log.exists(nickname))
+        log.loadGame(nickname, head);
 
     //inserting player in the ranking
     ranking.insertPlayer(nickname);
@@ -472,17 +476,18 @@ void Menu::renderRank() const {
     printLeavesArt();
     drawFrame("[<-]/[->] per cambiare pagina - [q] per chiudere e salvare", currentPage);
 
-    const int boxHeigth=6, boxWidth=50, spacing=1, rankPerPage=5;
+    const int boxHeigth=6, boxWidth=50, spacing=1, maxRank=5;
     int maxCol, maxRow;
     getmaxyx(stdscr, maxRow, maxCol);
-    int offsetY = (maxRow - rankPerPage*boxHeigth - (rankPerPage-1)*spacing)/2, 
+    int offsetY = (maxRow - maxRank*boxHeigth - (maxRank-1)*spacing)/2, 
     offsetX=(maxCol-boxWidth)/2;
     utl::Node<SingleRank>* tailRank = ranking.getTailRankPointer();
 
     int position = 1;
+    long scoreToReach; //nel caso il giocatore non sia tra i primi 5 salvo i punti del quinto
     utl::Node<SingleRank>* headRank = ranking.getHeadRankPointer();
 
-    while (headRank != NULL && position <= rankPerPage) {
+    while (headRank != NULL && position <= maxRank) {
         drawBoxBorder(offsetY, offsetX, boxHeigth, boxWidth);
         const int size = 30;
         char string[size];
@@ -497,9 +502,12 @@ void Menu::renderRank() const {
             case 3:
                 attron(COLOR_PAIR(utl::GREEN) | A_UNDERLINE);
                 break;
+            case 5:
+                scoreToReach = headRank -> value.getBestTotScore();
             default:
                 attron(COLOR_PAIR(utl::WHITE));
                 break;
+            
         }
         snprintf(string, size, "%d: %s", position, headRank -> value.getNickname());
         mvwprintw(stdscr, offsetY+2, (maxCol-strlen(string))/2, "%s", string);
@@ -526,8 +534,7 @@ void Menu::renderRank() const {
         position++;
     }
     if (ranking.playerNotInRank()){
-        long int scoreToReach = tailRank -> prev -> value.getBestTotScore();
-        long playerScore = tailRank -> value.getBestTotScore();
+        long playerScore = ranking.getPlayerScore();
         scoreToReach -= playerScore;
         const int size = 100;
         char msg[size];

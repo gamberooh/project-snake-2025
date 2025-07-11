@@ -46,14 +46,6 @@ void Ranking::fixRank() {
         }
         lastSorted = current;
     } while(swapped);
-    //assegnazione delle posizione ordinatepos++;
-    // int pos = 1;
-    // utl::Node<SingleRank> *current = ranking.head;
-    // while (current != NULL) {
-    //     pos++;
-    //     current->value.setPos(pos);
-    //     current = current->next;
-    // }
 }
 
 void Ranking::insertPlayer(char* nickname) {
@@ -74,7 +66,8 @@ void Ranking::insertPlayer(char* nickname) {
         currentPlayer = ranking.tail;
     }
 }
-long getPlayerScore(utl::Node<SingleLevel> *head){
+
+long updatePlayerScore(utl::Node<SingleLevel> *head){
     long playerScore = 0;
     utl::Node<SingleLevel> *p = head;
     while (p != NULL) {
@@ -85,7 +78,7 @@ long getPlayerScore(utl::Node<SingleLevel> *head){
 }
 
 void Ranking::updateRank(utl::Node<SingleLevel> *head) {
-    currentPlayer -> value.setBestTotScore(getPlayerScore(head));
+    currentPlayer -> value.setBestTotScore(updatePlayerScore(head));
     fixRank();
 }
 
@@ -97,7 +90,11 @@ void Ranking::loadPlayer(SingleRank elem) {
 }
 
 bool Ranking::playerNotInRank() const {
-     return currentPlayer->value.getPos() > MAX_RANK ;
+     return currentPlayer->value.getPos() > MAX_RANK;
+}
+
+long Ranking::getPlayerScore() const{
+    return currentPlayer->value.getBestTotScore();
 }
 
 

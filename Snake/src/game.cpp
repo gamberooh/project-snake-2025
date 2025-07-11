@@ -42,8 +42,7 @@ void Game::run(){
         }
         render();
     }
-
-    endwin(); //per sicurezza
+    endwin();
 }
 
 #define snake currentLevel->value.snake

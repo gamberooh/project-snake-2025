@@ -19,20 +19,20 @@ private:
 
 public:
     Ranking();
-    //gestione della struttura dati
     void updateRank(utl::Node<SingleLevel> *head);
-    void writeRankingFile();
-
+    
     bool playerNotInRank() const;
+    long getPlayerScore() const;
+    int getRankSize() const;
     SingleRank getTail() const;
-
     utl::Node<SingleRank>* getHeadRankPointer() const;
     utl::Node<SingleRank>* getTailRankPointer() const;
 
+    //scrittura su file
+    void writeRankingFile();
     void insertPlayer(char* nickname);
-
     void buildListFromFile();
-    int getRankSize() const;
+    
 };
 
 #endif //RANKING_H
