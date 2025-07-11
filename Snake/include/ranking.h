@@ -8,6 +8,7 @@
 #include "singleLevel.h"
 #include "log.h"
 #define MAX_RANK 5
+#define MAX_PATH 150
 
 
 class Ranking {

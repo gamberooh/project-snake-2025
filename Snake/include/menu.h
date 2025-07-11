@@ -32,7 +32,7 @@ class Menu {
         const int totalPages;
         menuPage currentPage;
         Ranking ranking;
-        Log log; 
+        //Log log; 
 
         //Setup
         void setupGame(utl::Node<SingleLevel>* head);
