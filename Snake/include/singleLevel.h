@@ -9,7 +9,7 @@ struct Stat {
     int id;  //numero del livello
     //tempo
     double timeLimit;
-    double timePassed;  // con il tempo passato e la durata totale si riesce a capire lo stato del livello, iniziato, nuovo, finito
+    double timePassed;
     //velocità
     int snakeSpeed;
     //punti
@@ -27,14 +27,13 @@ struct Stat {
 class SingleLevel {
     public:
         SingleLevel();
-        Arena arena;  //non invertire queste due se no da errore perchè arena non è ancora definita e snake ci accede;
+        Arena arena;
         Snake snake;
         Food food;
         Stat stat;
 
         void setLevelStat(int levelId);
         bool updateLevelStat(double deltaTime);
-        //più i metodi che vorrai implementare
 };
 
 

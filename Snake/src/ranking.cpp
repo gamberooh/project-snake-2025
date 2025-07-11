@@ -54,6 +54,8 @@ void Ranking::insertPlayer(char* nickname) {
     while (p!=NULL and toIns) {
         if (strcmp(p->value.getNickname(), nickname) == 0) {
             currentPlayer = p;
+            currentPlayer->value.setBestTotScore(0);
+            fixRank();
             toIns = false;
         }
         p = p->next;
