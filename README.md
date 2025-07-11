@@ -61,10 +61,9 @@
 
 5.  **Avvia il gioco (compatibile con entrambe le versioni di compilazione):**  
      Dalla cartella build
-   ```sh
-   ./Snake
-   ```
-
+    ```sh
+     ./Snake
+     ```
 ---
 
 ## Gruppo
