@@ -328,10 +328,6 @@ void Menu::setupGame(utl::Node<SingleLevel>* head)  //head e currenteLevel all'i
     nodelay(stdscr, TRUE);
     curs_set(0);
 
-    //load game se esiste
-    // if(log.exists(nickname))
-    //     log.loadGame(nickname, head);
-
     //inserting player in the ranking
     ranking.insertPlayer(nickname);
     currentPage = HOME;
