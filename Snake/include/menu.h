@@ -26,6 +26,7 @@ class Menu {
         void setGameoverPage();
         void setLevelPage();
         void updateRank(utl::Node<SingleLevel>* head);
+        void updateLog(utl::Node<SingleLevel>* head);
         char nickname[31];
 
     private:

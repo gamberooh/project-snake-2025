@@ -143,6 +143,9 @@ void Menu::updateRank(utl::Node<SingleLevel>* head) {
     ranking.updateRank(head);
 }
 
+void Menu::updateLog(utl::Node<SingleLevel>* head){
+    log.update(nickname, head);
+}
 
 // Render
 

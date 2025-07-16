@@ -7,44 +7,45 @@ Log::Log() {
 
 #define levelStat head->value.stat
 
+void Log::createLog(char* nickname, utl::Node<SingleLevel>* head) {
+      while (head != NULL) {
+        writeLine(nickname, levelStat.id, levelStat.currentScore, levelStat.bestScore, levelStat.timePassed);
+        head = head->next;
+    }
+}
+
 //prende tutto dal file log e lo carica sui livelli
 void Log::loadGame(char* nickname, utl::Node<SingleLevel>* head){
-    int count = 1;
     while(head!=NULL){
-        Stat currentStat = getLevelStat(nickname, count);
+        Stat currentStat = getLevelStat(nickname, levelStat.id);
         levelStat.id = currentStat.id;
         levelStat.bestScore = currentStat.bestScore;
         levelStat.currentScore = currentStat.currentScore;
         levelStat.timePassed = currentStat.timePassed;
+        head = head->next;
     }
 }
 
-//ausilarie
-void Log::swapPath(char* originalPath, char* tempPath) {
-    if (std::remove(originalPath) != 0) {
-        std::cerr << "Impossibile elimiminare il file originale!";
-    }
-    if (std::rename(tempPath, originalPath) !=0) {
-        std::cerr << "Impossibile rinominare il file temporaneo";
-    }
+void Log::update(char* nickname, utl::Node<SingleLevel>* head){
+    //esiste sempre il file, creato/caricato all'avvio
+    std::ofstream log(filePath, std::ios::trunc);
+    log.close();
+    createLog(nickname, head);
 }
+
 
 void Log::buildFilePath(char* nickname) {
     size_t totSize = strlen("../log/")+ strlen(nickname) + strlen(".txt") + 1;
-    if (totSize > MAX_PATH) {
+    if (totSize > MAX_PATH)
         return;
-    }
-    //buffer[0] = '\0';
     strcpy(filePath, "../log/");
     strncat(filePath, nickname, totSize);
     strncat(filePath, ".txt", totSize);
-
 }
 
 bool Log::exists(char* nickname) {
-    if (filePath[0] == '\0') {
+    if (filePath[0] == '\0')
         return false;
-    }
     std::ifstream log(filePath);
     return log.is_open();
 }
@@ -63,44 +64,6 @@ void Log::writeLine(char* nickname, int levelId, int levelScore, int maxScore, d
     log.close();
 }
 
-//problemino nell'eliminare
-void Log::updateLine(char* nickname, int levelId, int levelScore, int maxScore, double timePassed) {
-    std::ifstream log(filePath);
-
-    if (!log.is_open()) {
-        //std::cerr << "Impossibile aprire il file";
-        return;
-    }
-
-    char tmpath[MAX_PATH];
-    strcpy(tmpath, filePath);
-    strcat(tmpath, ".tmp");
-    if (strlen(tmpath) > MAX_PATH) {
-        std::cerr << "Percorso file temporaneo oltre il massimo presabilito!";
-        return;
-    }
-
-    std::ofstream tempLog(tmpath, std::ios::out);
-
-    if (!tempLog.is_open()) {
-        std::cerr << "Impossibile aprire il file temporaneo!";
-        return;
-    }
-
-    //non trovato il livello
-    log.close();
-    tempLog.close();
-    swapPath(filePath, tmpath);
-}
-
-
-void Log::createLog(char* nickname, utl::Node<SingleLevel>* head) {
-      while (head != NULL) {
-        writeLine(nickname, levelStat.id, levelStat.currentScore, levelStat.bestScore, levelStat.timePassed);
-        head = head->next;
-    }
-}
-
 // da log crea statistca livelloa all'id level passato per parametro
 Stat Log::getLevelStat(char* nickname, int levelId) {
     std::ifstream log(filePath);
@@ -109,7 +72,6 @@ Stat Log::getLevelStat(char* nickname, int levelId) {
         std::cerr << "Impossibile aprire il file";
         return Stat();
     }
-
     //inizializazione
     Stat currentStat;
     int id = 0;
