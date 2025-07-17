@@ -97,7 +97,8 @@ bool utl::DoubleLinkedListPos::isMember(Position val) const {
     return false;
 }
 
+//SingleLevel DLL
 template class utl::DoubleLinkedList<SingleLevel>;
 
-//SingleRanking DDL
+//SingleRanking DLL
 template class utl::DoubleLinkedList<SingleRank>;

@@ -33,7 +33,6 @@ void Log::update(char* nickname, utl::Node<SingleLevel>* head){
     createLog(nickname, head);
 }
 
-
 void Log::buildFilePath(char* nickname) {
     size_t totSize = strlen("../log/")+ strlen(nickname) + strlen(".txt") + 1;
     if (totSize > MAX_PATH)
@@ -132,12 +131,6 @@ Stat Log::getLevelStat(char* nickname, int levelId) {
     //non trovato il livello
     log.close();
     return Stat();
-}
-
-void Log::deleteLog(char* nickname) {
-    char filepath[MAX_PATH];
-    std::remove(filePath);
-
 }
 
 
